@@ -1,0 +1,36 @@
+[gd_scene load_steps=8 format=3 uid="uid://0yr0ktghvyd6"]
+
+[ext_resource type="Script" uid="uid://dipo6uwa3jppo" path="res://addons/dialogue_nodes/objects/DialogueBox.gd" id="1_ife8n"]
+[ext_resource type="Script" uid="uid://ba8n4wyuqdpyr" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="3_1u0vr"]
+[ext_resource type="Script" uid="uid://d1pvbg1d0npxv" path="res://addons/dialogue_nodes/objects/bbcodeGhost.gd" id="4_n0ejf"]
+[ext_resource type="Script" uid="uid://br1cj7vkts6vx" path="res://addons/dialogue_nodes/objects/bbcodeMatrix.gd" id="5_gor1f"]
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_qec1o"]
+script = ExtResource("3_1u0vr")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_hahyq"]
+script = ExtResource("4_n0ejf")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_1vmni"]
+script = ExtResource("5_gor1f")
+
+[node name="DialogueBox" type="Panel"]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -500.0
+offset_top = -272.0
+offset_right = 500.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_ife8n")
+start_id = "START"
+hide_portrait = true
+skip_input_action = "LeftClick"
+custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_qec1o"), SubResource("RichTextEffect_hahyq"), SubResource("RichTextEffect_1vmni")])
+options_alignment = 1
+options_vertical = true

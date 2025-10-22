@@ -1,11 +1,16 @@
-[gd_scene format=3 uid="uid://c15yqkryj3lhd"]
+[gd_scene load_steps=4 format=3 uid="uid://c15yqkryj3lhd"]
+
+[ext_resource type="Script" uid="uid://cw6nnw2askfce" path="res://scenes/levels/level.gd" id="1_377w7"]
+[ext_resource type="PackedScene" uid="uid://0yr0ktghvyd6" path="res://scenes/UI/dialogue_box.tscn" id="2_bovvr"]
+[ext_resource type="Resource" path="res://Anush.tres" id="3_b2cq8"]
 
 [node name="level" type="Node2D"]
+script = ExtResource("1_377w7")
 
-[node name="Label" type="Label" parent="."]
-offset_left = 489.0
-offset_top = 41.0
-offset_right = 669.0
-offset_bottom = 83.0
-theme_override_font_sizes/font_size = 30
-text = "LEVEL"
+[node name="DialogueBox" parent="." instance=ExtResource("2_bovvr")]
+offset_left = 76.0
+offset_top = 376.0
+offset_right = 1076.0
+offset_bottom = 632.0
+data = ExtResource("3_b2cq8")
+start_id = "A"
