@@ -1,16 +1,173 @@
-[gd_scene load_steps=4 format=3 uid="uid://c15yqkryj3lhd"]
+[gd_scene load_steps=8 format=3 uid="uid://c15yqkryj3lhd"]
 
 [ext_resource type="Script" uid="uid://cw6nnw2askfce" path="res://scenes/levels/level.gd" id="1_377w7"]
 [ext_resource type="PackedScene" uid="uid://0yr0ktghvyd6" path="res://scenes/UI/dialogue_box.tscn" id="2_bovvr"]
-[ext_resource type="Resource" path="res://Anush.tres" id="3_b2cq8"]
+[ext_resource type="Script" uid="uid://bvjdfspo644an" path="res://scenes/UI/inventory_ui.gd" id="5_urvlt"]
+[ext_resource type="FontFile" uid="uid://yhhpudnvmaps" path="res://resources/fonts/SpecialElite-Regular.ttf" id="6_d4w6o"]
+[ext_resource type="Texture2D" uid="uid://cktfsmj3kqqj6" path="res://graphics/UI/BoxesBanners/Box_Blue_Rounded.svg" id="6_ouxo3"]
+[ext_resource type="Script" uid="uid://08qvdfqjbepi" path="res://scenes/UI/case_log_ui.gd" id="7_mbbpy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_urvlt"]
+font = ExtResource("6_d4w6o")
+font_size = 28
 
 [node name="level" type="Node2D"]
 script = ExtResource("1_377w7")
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(574.9999, 217.49997)
+scale = Vector2(2.1054542, 2.1725001)
 
 [node name="DialogueBox" parent="." instance=ExtResource("2_bovvr")]
 offset_left = 76.0
 offset_top = 376.0
 offset_right = 1076.0
 offset_bottom = 632.0
-data = ExtResource("3_b2cq8")
-start_id = "A"
+
+[node name="InventoryUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("5_urvlt")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="InventoryUI"]
+layout_mode = 1
+offset_left = 755.0
+offset_top = 11.0
+offset_right = 1146.0
+offset_bottom = 86.0
+theme_override_constants/separation = 4
+
+[node name="TextureButton" type="TextureButton" parent="InventoryUI/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("6_ouxo3")
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="InventoryUI/HBoxContainer/TextureButton"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+
+[node name="TextureButton2" type="TextureButton" parent="InventoryUI/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("6_ouxo3")
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="InventoryUI/HBoxContainer/TextureButton2"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+
+[node name="TextureButton3" type="TextureButton" parent="InventoryUI/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("6_ouxo3")
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="InventoryUI/HBoxContainer/TextureButton3"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+
+[node name="TextureButton4" type="TextureButton" parent="InventoryUI/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("6_ouxo3")
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="InventoryUI/HBoxContainer/TextureButton4"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+
+[node name="TextureButton5" type="TextureButton" parent="InventoryUI/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("6_ouxo3")
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="InventoryUI/HBoxContainer/TextureButton5"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+
+[node name="CaseLogUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_mbbpy")
+metadata/_edit_lock_ = true
+
+[node name="Panel" type="Panel" parent="CaseLogUI"]
+layout_mode = 0
+offset_right = 446.0
+offset_bottom = 335.0
+
+[node name="Heading" type="Label" parent="CaseLogUI/Panel"]
+layout_mode = 0
+offset_left = 161.0
+offset_top = 8.0
+offset_right = 281.0
+offset_bottom = 37.0
+text = "Case Log"
+label_settings = SubResource("LabelSettings_urvlt")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CaseLogUI/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CaseLogUI/Panel/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Items" type="Node2D" parent="."]

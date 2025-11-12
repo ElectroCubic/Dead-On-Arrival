@@ -8,7 +8,7 @@ class_name Main
 @export_range(0.0,1.0,0.1) var move_time_sec: float = 0.1
 
 func _on_play_btn_pressed():
-	TransitionLayer.change_scene("res://scenes/levels/level.tscn")
+	TransitionLayer.change_scene("res://scenes/levels/intro.tscn")
 
 func _on_options_btn_pressed():
 	$MainUI.hide()

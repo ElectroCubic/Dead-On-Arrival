@@ -54,6 +54,9 @@ signal dialogue_ended
 		sample_portrait = value
 		if portrait: portrait.texture = sample_portrait
 
+@export var portrait_offset: Vector2
+@export var portrait_size: Vector2
+
 @export_group('Dialogue')
 ## Speed of scroll when using joystick/keyboard input
 @export var scroll_speed := 4
@@ -129,6 +132,7 @@ signal dialogue_ended
 ## Hide dialogue box at the end of a dialogue
 @export var hide_on_dialogue_end := true
 
+
 ## Contains the variable data from the [param DialogueData] parsed in an easy to access dictionary.[br]
 ## Example: [code]{ "COINS": 10, "NAME": "Obama", "ALIVE": true }[/code]
 var variables : Dictionary
@@ -142,6 +146,7 @@ var speaker_label : Label
 var dialogue_label : RichTextLabel
 ## Contains all the option buttons. The currently displayed options are visible while the rest are hidden. This value is automatically set while running a dialogue tree.
 var options_container : BoxContainer
+
 
 # [param DialogueParser] used for parsing the dialogue [member data].
 # NOTE: Using [param DialogueParser] as a child instead of extending from it, because [DialogueBox] needs to extend from [Panel].
@@ -175,6 +180,12 @@ func _enter_tree():
 	portrait.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT
 	portrait.texture = sample_portrait
 	portrait.visible = not hide_portrait
+	
+	var sprite_node = Sprite2D.new()
+	sprite_node.position = portrait.position + portrait_offset
+	sprite_node.global_scale = portrait_size
+	sprite_node.z_index = -1
+	add_child(sprite_node)
 	
 	_sub_container = BoxContainer.new()
 	_main_container.add_child(_sub_container)

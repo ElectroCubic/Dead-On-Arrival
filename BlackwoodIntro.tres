@@ -1,0 +1,81 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://dtivp056m5sbj"]
+
+[ext_resource type="Script" uid="uid://c2sr0dxa5ad11" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_x7uby"]
+
+[resource]
+script = ExtResource("1_x7uby")
+starts = {
+"INTRO": &"0_1"
+}
+nodes = {
+&"0_1": {
+"link": &"1_1",
+"offset": Vector2(0, 0),
+"start_id": "INTRO"
+},
+&"1_1": {
+"dialogue": "Quite the storm tonight. [wait time=1] I hope this ‘special announcement’ is worth the trip.",
+"offset": Vector2(220, 0),
+"options": {
+0: {
+"condition": {},
+"link": &"1_2",
+"text": ""
+}
+},
+"size": Vector2(300, 400.00043),
+"speaker": "Detective"
+},
+&"1_2": {
+"dialogue": "Ah, Detective! [wait time=1] Just in time. I’ve solved the final piece of my greatest puzzle! Tonight, I reveal something extraordinary.",
+"offset": Vector2(600, 0),
+"options": {
+0: {
+"condition": {},
+"link": &"1_3",
+"text": ""
+}
+},
+"size": Vector2(320.00058, 400.00067),
+"speaker": "Alistair"
+},
+&"1_3": {
+"dialogue": "Darling, must everything be about your inventions? Let the detective rest, the dinner is ready.",
+"offset": Vector2(1000, 0),
+"options": {
+0: {
+"condition": {},
+"link": &"1_4",
+"text": ""
+}
+},
+"size": Vector2(319.99957, 400.00055),
+"speaker": "Lillian"
+},
+&"1_4": {
+"dialogue": "Father never rests. [wait time=1] Not until every piece is in its place... isn’t that right, Father? (smirks)",
+"offset": Vector2(1400, 0),
+"options": {
+0: {
+"condition": {},
+"link": &"1_5",
+"text": ""
+}
+},
+"size": Vector2(320.00073, 400.00055),
+"speaker": "Eleanor"
+},
+&"1_5": {
+"dialogue": "You’ll understand soon enough. I’ll fetch my puzzle box from the study. [wait time=1] Detective, you can join the others and wait for me in the Dining Hall, I shall be back within a few minutes.",
+"offset": Vector2(1800, 0),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(340.0003, 400.00055),
+"speaker": "Alistair"
+}
+}

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://bjme2drtas671"]
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://brn541qct0fa4"]
 
 [ext_resource type="Script" uid="uid://c2sr0dxa5ad11" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1"]
 
@@ -9,17 +9,17 @@ starts = {
 "START2": &"0_2"
 }
 nodes = {
-"0_1": {
+&"0_1": {
 "link": &"1_1",
 "offset": Vector2(0, 0),
 "start_id": "START"
 },
-"0_2": {
+&"0_2": {
 "link": &"1_4",
 "offset": Vector2(0, 600),
 "start_id": "START2"
 },
-"1_1": {
+&"1_1": {
 "dialogue": "Which pill will you take?",
 "offset": Vector2(220, 0),
 "options": {
@@ -34,23 +34,23 @@ nodes = {
 "text": "Blue pill"
 }
 },
-"size": Vector2(300, 275),
+"size": Vector2(300, 308),
 "speaker": "Morpheus"
 },
-"1_2": {
+&"1_2": {
 "dialogue": "Do you have the doctor's prescription for the pill?",
 "offset": Vector2(560, -80),
 "options": {
 0: {
 "condition": {},
-"link": "END",
+"link": &"1_6",
 "text": "Uh..."
 }
 },
-"size": Vector2(300, 242),
+"size": Vector2(300.00018, 273),
 "speaker": "Morpheus"
 },
-"1_3": {
+&"1_3": {
 "dialogue": "You shouldn't take pills from strangers, you know!",
 "offset": Vector2(560, 260),
 "options": {
@@ -60,10 +60,10 @@ nodes = {
 "text": "Oh..."
 }
 },
-"size": Vector2(300, 242),
+"size": Vector2(300.00006, 273.00067),
 "speaker": "Morpheus"
 },
-"1_4": {
+&"1_4": {
 "dialogue": "Heck, you can even make multiple dialogue trees in the same file! (Say, all dialogues for one character or one act)",
 "offset": Vector2(220, 600),
 "options": {
@@ -73,10 +73,10 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 242.948),
+"size": Vector2(300, 340.00037),
 "speaker": "Greg"
 },
-"1_5": {
+&"1_5": {
 "dialogue": "When you want to call a specific dialogue tree, just pass the unique start ID when calling [color=green]$DialogueBox.start('MyID')[/color]",
 "offset": Vector2(560, 600),
 "options": {
@@ -86,18 +86,57 @@ nodes = {
 "text": "Cool!"
 }
 },
-"size": Vector2(300, 312.5),
+"size": Vector2(320.00018, 400.0005),
 "speaker": "Greg"
 },
-"2_1": {
-"comment": "Create branching dialogues using different options.",
-"offset": Vector2(-200, 80),
-"size": Vector2(392.562, 100)
+&"1_6": {
+"dialogue": "qda",
+"offset": Vector2(980, 120),
+"options": {
+0: {
+"condition": {},
+"link": &"1_7",
+"text": ""
+}
 },
-"2_2": {
+"size": Vector2(300, 240.00002),
+"speaker": "hello"
+},
+&"1_7": {
+"dialogue": "",
+"offset": Vector2(1413.2567, 294.386),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": ""
+},
+&"1_8": {
+"dialogue": "",
+"offset": Vector2(1420, 40),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": ""
+},
+&"2_1": {
+"comment": "Create branching dialogues using different options.",
+"offset": Vector2(-240, 160),
+"size": Vector2(440, 100.00011)
+},
+&"2_2": {
 "comment": "Create multiple dialogue trees in the same file.",
-"offset": Vector2(-200, 680),
-"size": Vector2(392.562, 100)
+"offset": Vector2(-220, 760),
+"size": Vector2(420, 140.00055)
 }
 }
-strays = Array[String](["2_1", "2_2"])
+strays = Array[String](["2_1", "2_2", "1_8"])

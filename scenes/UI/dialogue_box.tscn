@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://0yr0ktghvyd6"]
+[gd_scene load_steps=9 format=3 uid="uid://0yr0ktghvyd6"]
 
+[ext_resource type="Theme" uid="uid://dc6c1peo4pfyr" path="res://addons/dialogue_nodes/themes/bubbly.theme" id="1_1u0vr"]
 [ext_resource type="Script" uid="uid://dipo6uwa3jppo" path="res://addons/dialogue_nodes/objects/DialogueBox.gd" id="1_ife8n"]
 [ext_resource type="Script" uid="uid://ba8n4wyuqdpyr" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="3_1u0vr"]
 [ext_resource type="Script" uid="uid://d1pvbg1d0npxv" path="res://addons/dialogue_nodes/objects/bbcodeGhost.gd" id="4_n0ejf"]
@@ -16,6 +17,7 @@ script = ExtResource("5_gor1f")
 
 [node name="DialogueBox" type="Panel"]
 visible = false
+z_index = 10
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -27,10 +29,13 @@ offset_right = 500.0
 offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 0
+theme = ExtResource("1_1u0vr")
 script = ExtResource("1_ife8n")
 start_id = "START"
 hide_portrait = true
-skip_input_action = "LeftClick"
+portrait_offset = Vector2(200, -150)
+portrait_size = Vector2(0.7, 0.7)
+skip_input_action = "SkipDialogue"
 custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_qec1o"), SubResource("RichTextEffect_hahyq"), SubResource("RichTextEffect_1vmni")])
 options_alignment = 1
 options_vertical = true

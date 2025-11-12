@@ -1,25 +1,38 @@
-[gd_resource type="Resource" script_class="CharacterList" load_steps=7 format=3 uid="uid://di21ijmfa2s22"]
+[gd_resource type="Resource" script_class="CharacterList" load_steps=10 format=3 uid="uid://cddnydl7ss61o"]
 
-[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/CharacterList.gd" id="1"]
-[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/Character.gd" id="2"]
-[ext_resource type="Texture2D" uid="uid://b2hbqv3slgfxt" path="res://examples/profile0.png" id="3"]
+[ext_resource type="Script" uid="uid://je0s4w1xsail" path="res://addons/dialogue_nodes/objects/Character.gd" id="1_qqyde"]
+[ext_resource type="Script" uid="uid://c1m2xaypvjkuc" path="res://addons/dialogue_nodes/objects/CharacterList.gd" id="2_5ooba"]
+[ext_resource type="Texture2D" uid="uid://b6dl8sswqrj88" path="res://graphics/characters/Old man_new.svg" id="2_am5pn"]
+[ext_resource type="Texture2D" uid="uid://dghc6d0qksi6y" path="res://graphics/characters/The_young_wife-removebg-preview.svg" id="3_xbx25"]
+[ext_resource type="Texture2D" uid="uid://lukrbccnl7j7" path="res://graphics/characters/The_killer_daughter-removebg-preview.svg" id="4_6dsqv"]
 
-[sub_resource type="Resource" id="1"]
-script = ExtResource("2")
-name = "Greg"
-color = Color(0, 0.964706, 0.647059, 1)
+[sub_resource type="Resource" id="Resource_nd04m"]
+script = ExtResource("1_qqyde")
+name = "Alistair"
+image = ExtResource("2_am5pn")
+color = Color(0.9684175, 0.019285558, 0.20127852, 1)
+metadata/_custom_type_script = "uid://je0s4w1xsail"
 
-[sub_resource type="Resource" id="2"]
-script = ExtResource("2")
-name = "Clara"
-image = ExtResource("3")
-color = Color(1, 0.501961, 0.784314, 1)
+[sub_resource type="Resource" id="Resource_rt1qx"]
+script = ExtResource("1_qqyde")
+name = "Lillian"
+image = ExtResource("3_xbx25")
+color = Color(0.3753825, 0.880165, 0.25485313, 1)
+metadata/_custom_type_script = "uid://je0s4w1xsail"
 
-[sub_resource type="Resource" id="Resource_uc76g"]
-script = ExtResource("2")
-name = "Binkle Doodle"
-color = Color(1, 1, 0.52549, 1)
+[sub_resource type="Resource" id="Resource_b3fb3"]
+script = ExtResource("1_qqyde")
+name = "Eleanor"
+image = ExtResource("4_6dsqv")
+color = Color(0.18319964, 0.6219292, 0.92768556, 1)
+metadata/_custom_type_script = "uid://je0s4w1xsail"
+
+[sub_resource type="Resource" id="Resource_am5pn"]
+script = ExtResource("1_qqyde")
+name = "Detective"
+color = Color(0.9752062, 0.5589252, 0.21823789, 1)
+metadata/_custom_type_script = "uid://je0s4w1xsail"
 
 [resource]
-script = ExtResource("1")
-characters = Array[ExtResource("2")]([SubResource("1"), SubResource("2"), SubResource("Resource_uc76g")])
+script = ExtResource("2_5ooba")
+characters = Array[ExtResource("1_qqyde")]([SubResource("Resource_nd04m"), SubResource("Resource_rt1qx"), SubResource("Resource_b3fb3"), SubResource("Resource_am5pn")])

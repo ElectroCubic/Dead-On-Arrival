@@ -99,6 +99,7 @@ func _on_files_changed():
 		return
 	
 	graph = new_metadata['graph']
+	graph.undo_redo = undo_redo
 	graph.run_requested.connect(run_tree)
 	variables = new_metadata['variables']
 	
@@ -151,4 +152,3 @@ func _on_dialogue_ended():
 
 	if _debug:
 		print('Dialogue ended')
-

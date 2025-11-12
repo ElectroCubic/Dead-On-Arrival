@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://cmewvyqhu1nf7"]
+
+[ext_resource type="Script" uid="uid://c2sr0dxa5ad11" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_8ogae"]
+
+[resource]
+script = ExtResource("1_8ogae")
+starts = {
+"Lillian": &"0_1"
+}
+nodes = {
+&"0_1": {
+"link": &"1_1",
+"offset": Vector2(0, 220),
+"start_id": "Lillian"
+},
+&"1_1": {
+"dialogue": "What do you want to know?",
+"offset": Vector2(260, 220),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(540, 240),
+"speaker": "Lillian"
+},
+&"1_2": {
+"dialogue": "",
+"offset": Vector2(368.0204, 558.11523),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300.00006, 240.00037),
+"speaker": ""
+}
+}
+strays = Array[String](["1_2"])

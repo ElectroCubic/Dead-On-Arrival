@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5lt4q8eaqj4q"]
+
+[ext_resource type="Script" uid="uid://jerbuxauqtex" path="res://scenes/item.gd" id="1_4gq7n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r3ghi"]
+size = Vector2(101, 100)
+
+[node name="Item" type="Area2D"]
+collision_mask = 0
+script = ExtResource("1_4gq7n")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 96.0
+offset_bottom = 95.0
+expand_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(50.5, 50)
+shape = SubResource("RectangleShape2D_r3ghi")
