@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c15yqkryj3lhd"]
+[gd_scene load_steps=17 format=3 uid="uid://c15yqkryj3lhd"]
 
 [ext_resource type="Script" uid="uid://cw6nnw2askfce" path="res://scenes/levels/level.gd" id="1_377w7"]
 [ext_resource type="Script" uid="uid://dipo6uwa3jppo" path="res://addons/dialogue_nodes/objects/DialogueBox.gd" id="2_icy5c"]
@@ -10,6 +10,8 @@
 [ext_resource type="FontFile" uid="uid://yhhpudnvmaps" path="res://resources/fonts/SpecialElite-Regular.ttf" id="6_d4w6o"]
 [ext_resource type="Texture2D" uid="uid://cktfsmj3kqqj6" path="res://graphics/UI/BoxesBanners/Box_Blue_Rounded.svg" id="6_ouxo3"]
 [ext_resource type="Script" uid="uid://08qvdfqjbepi" path="res://scenes/UI/case_log_ui.gd" id="7_mbbpy"]
+[ext_resource type="Texture2D" uid="uid://dqmhwu7btbeut" path="res://graphics/UI/ButtonIcons/IconButton_Large_Orange_Square.svg" id="11_xfk5q"]
+[ext_resource type="Texture2D" uid="uid://dh1py4huc0l48" path="res://graphics/UI/Icons/Icon_Small_WhiteOutline_LookingGlass.svg" id="12_qogh7"]
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_qec1o"]
 script = ExtResource("3_rmjfq")
@@ -188,7 +190,9 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 10.0
 offset_top = 45.0
+offset_right = -10.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -197,3 +201,27 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="Items" type="Node2D" parent="."]
+
+[node name="InterrogateBtn" type="TextureButton" parent="."]
+offset_left = 1072.0
+offset_top = 100.0
+offset_right = 1143.0
+offset_bottom = 171.0
+texture_normal = ExtResource("11_xfk5q")
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="InterrogateBtn"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_qogh7")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="InterrogateBtn" to="." method="_on_interrogate_btn_pressed"]

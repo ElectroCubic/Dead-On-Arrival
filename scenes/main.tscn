@@ -1,22 +1,35 @@
-[gd_scene load_steps=4 format=3 uid="uid://bu60p87wsanon"]
+[gd_scene load_steps=6 format=3 uid="uid://bu60p87wsanon"]
 
 [ext_resource type="Script" uid="uid://bari1f60v1ngn" path="res://scenes/main.gd" id="1_luvgp"]
 [ext_resource type="FontFile" uid="uid://yhhpudnvmaps" path="res://resources/fonts/SpecialElite-Regular.ttf" id="2_bhm08"]
+[ext_resource type="Texture2D" uid="uid://b1m6vu8pat2ff" path="res://graphics/backgrounds/main bg.jpg" id="2_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://b2xj18tdq55m0" path="res://scenes/UI/options_menu_screen.tscn" id="3_sugp2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tbgi4"]
+bg_color = Color(0.21, 0.21, 0.21, 0.7019608)
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_luvgp")
 
+[node name="MainBg" type="Sprite2D" parent="."]
+position = Vector2(578.00006, 275.99997)
+scale = Vector2(0.19333337, 0.19333333)
+texture = ExtResource("2_jyhfs")
+
 [node name="MainUI" type="CanvasLayer" parent="."]
 
 [node name="Title" type="Label" parent="MainUI"]
-offset_left = 270.0
-offset_top = 74.0
-offset_right = 933.0
-offset_bottom = 155.0
+offset_left = 243.0
+offset_top = 79.0
+offset_right = 907.0
+offset_bottom = 190.0
+theme_override_colors/font_color = Color(0.86658764, 0.17683315, 0.17683315, 1)
 theme_override_fonts/font = ExtResource("2_bhm08")
 theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxFlat_tbgi4")
 text = "DEAD ON ARRIVAL"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="PlayBtn" type="Button" parent="MainUI"]
 offset_left = 484.0

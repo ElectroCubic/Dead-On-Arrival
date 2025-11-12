@@ -1,0 +1,43 @@
+[gd_scene load_steps=9 format=3 uid="uid://bpp7eqtda3igg"]
+
+[ext_resource type="PackedScene" uid="uid://c15yqkryj3lhd" path="res://scenes/levels/level.tscn" id="1_46vgp"]
+[ext_resource type="Script" uid="uid://cmw5jxbothir" path="res://scenes/levels/dinner_hall.gd" id="2_m428f"]
+[ext_resource type="Texture2D" uid="uid://dle8fngheefk1" path="res://graphics/backgrounds/3519577_2354.jpg" id="2_uo5gd"]
+[ext_resource type="Resource" uid="uid://dtivp056m5sbj" path="res://BlackwoodIntro.tres" id="3_m428f"]
+[ext_resource type="PackedScene" uid="uid://bh7rkcb0te8ot" path="res://scenes/arrow.tscn" id="5_hl7ab"]
+[ext_resource type="PackedScene" uid="uid://c5lt4q8eaqj4q" path="res://scenes/item.tscn" id="5_r6g7b"]
+[ext_resource type="Texture2D" uid="uid://cylhv4ir1vprc" path="res://graphics/objects/clues/gardening_gloves.png" id="6_x175j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dtjub"]
+size = Vector2(81.69144, 60.746155)
+
+[node name="DinnerHall" instance=ExtResource("1_46vgp")]
+script = ExtResource("2_m428f")
+
+[node name="Background" parent="." index="0"]
+position = Vector2(577.9229, 192.5)
+scale = Vector2(0.211992, 0.23025)
+texture = ExtResource("2_uo5gd")
+
+[node name="DialogueBox" parent="." index="1"]
+data = ExtResource("3_m428f")
+start_id = "DINNER"
+
+[node name="Stained Gloves" parent="Items" index="0" instance=ExtResource("5_r6g7b")]
+position = Vector2(77, 551)
+scale = Vector2(1.0322014, 0.40447247)
+item_name = "Stained Gloves"
+item_icon = ExtResource("6_x175j")
+item_info = "The gloves seems to be covered with some kind of plant-extract, probably from the garden"
+click_required = 3
+item_id = "4"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Items/Stained Gloves" index="1"]
+position = Vector2(49.253006, 50.621887)
+scale = Vector2(1, 1.0000002)
+shape = SubResource("RectangleShape2D_dtjub")
+metadata/_edit_lock_ = true
+
+[node name="RightArrow" parent="." index="5" instance=ExtResource("5_hl7ab")]
+position = Vector2(1102, 405)
+target_scene = "res://scenes/levels/intro.tscn"

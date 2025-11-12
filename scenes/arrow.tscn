@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bh7rkcb0te8ot"]
+
+[ext_resource type="Script" uid="uid://vqod0ae02j7y" path="res://scenes/arrow.gd" id="1_23jat"]
+[ext_resource type="Texture2D" uid="uid://x54grrw3rya6" path="res://graphics/UI/Icons/Icon_Small_Blank_Arrow.svg" id="1_umosx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_23jat"]
+size = Vector2(84, 78)
+
+[node name="Arrow" type="Area2D"]
+collision_mask = 0
+script = ExtResource("1_23jat")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -41.0
+offset_top = -38.0
+offset_right = 42.0
+offset_bottom = 39.0
+texture = ExtResource("1_umosx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_23jat")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

@@ -1,9 +1,10 @@
 extends CanvasLayer
 
 @onready var main = get_node("../") as Main
+@onready var mainUI = get_node("../MainUI")
 @onready var backBtn = $Back
 
-func _on_music_slider_value_changed(value) -> void:	
+func _on_music_slider_value_changed(value) -> void:
 	AudioManager.current_music_vol = value
 	AudioServer.set_bus_volume_db(AudioManager.music_bus_id,linear_to_db(value))
 	AudioServer.set_bus_mute(AudioManager.music_bus_id, value < 0.05)
@@ -16,6 +17,8 @@ func _on_back_pressed() -> void:
 	AudioManager.click_sfx.play()
 	await get_tree().create_timer(0.5).timeout
 	hide()
+	mainUI.show()
+	
 
 func change_back_font_size(size: int) -> void:
 	backBtn.add_theme_font_size_override("font_size",size)

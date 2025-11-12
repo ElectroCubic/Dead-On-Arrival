@@ -7,6 +7,9 @@ class_name CaseLog
 
 func _ready():
 	visible = false
+	# Rebuild entries if switching back to this scene
+	for text in Globals.case_log_entries:
+		_add_label(text)
 
 func _process(_delta):
 	if Input.is_action_just_pressed("ToggleCaselog"):
@@ -14,9 +17,13 @@ func _process(_delta):
 
 func toggle_log():
 	if not Globals.is_dialogue_playing:
-		visible =  !visible
+		visible = !visible
 
 func add_entry(text: String):
+	Globals.add_log_entry(text)
+	_add_label(text)
+
+func _add_label(text: String):
 	var label = Label.new()
 	label.text = "- " + text
 	label.autowrap_mode = TextServer.AUTOWRAP_WORD
@@ -24,7 +31,6 @@ func add_entry(text: String):
 	label.add_theme_font_size_override("font_size", 20)
 	vbox.add_child(label)
 	
-	# Add spacing after each entry
 	var spacer = Control.new()
 	spacer.custom_minimum_size = Vector2(0, 15) 
 	vbox.add_child(spacer)

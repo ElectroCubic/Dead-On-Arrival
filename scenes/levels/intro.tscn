@@ -1,24 +1,27 @@
-[gd_scene load_steps=7 format=3 uid="uid://d3n5k4dwxdws3"]
+[gd_scene load_steps=6 format=3 uid="uid://d3n5k4dwxdws3"]
 
 [ext_resource type="PackedScene" uid="uid://c15yqkryj3lhd" path="res://scenes/levels/level.tscn" id="1_3kqdl"]
 [ext_resource type="Script" uid="uid://cineyvdl6foh5" path="res://scenes/levels/intro.gd" id="2_gs2wg"]
 [ext_resource type="Texture2D" uid="uid://151u4x4h2ykx" path="res://bg1.tres" id="3_ty81x"]
 [ext_resource type="Resource" uid="uid://dtivp056m5sbj" path="res://BlackwoodIntro.tres" id="4_7i1al"]
-[ext_resource type="PackedScene" uid="uid://c5lt4q8eaqj4q" path="res://scenes/item.tscn" id="4_p8wlm"]
-[ext_resource type="Texture2D" uid="uid://byyds1eid5r8x" path="res://graphics/objects/clues/journal_without_allistar-removebg-preview.png" id="5_7i1al"]
+[ext_resource type="PackedScene" uid="uid://bh7rkcb0te8ot" path="res://scenes/arrow.tscn" id="7_7i1al"]
 
-[node name="level" instance=ExtResource("1_3kqdl")]
+[node name="Intro" instance=ExtResource("1_3kqdl")]
 script = ExtResource("2_gs2wg")
 
 [node name="Background" parent="." index="0"]
 texture = ExtResource("3_ty81x")
+metadata/_edit_lock_ = true
 
 [node name="DialogueBox" parent="." index="1"]
 data = ExtResource("4_7i1al")
 start_id = "INTRO"
 
-[node name="Journal" parent="Items" index="0" instance=ExtResource("4_p8wlm")]
-position = Vector2(348, 305)
-item_name = "Alistair's Journal"
-item_icon = ExtResource("5_7i1al")
-item_info = "A personal journal with Alistair's handwriting"
+[node name="LeftArrow" parent="." index="5" instance=ExtResource("7_7i1al")]
+position = Vector2(46, 405)
+rotation = 3.1415927
+target_scene = "res://scenes/levels/dinner_hall.tscn"
+
+[node name="RightArrow" parent="." index="6" instance=ExtResource("7_7i1al")]
+position = Vector2(1102, 405)
+target_scene = "res://scenes/levels/study.tscn"

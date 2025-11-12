@@ -19,16 +19,26 @@ nodes = {
 "options": {
 0: {
 "condition": {},
-"link": "END",
-"text": ""
+"link": &"1_2",
+"text": "How well did you get along with your husband in recent weeks?"
+},
+1: {
+"condition": {},
+"link": &"1_3",
+"text": "Did you have any prior knowledge about Mr. Alistair's condition?"
+},
+2: {
+"condition": {},
+"link": &"1_4",
+"text": "Can you tell me about your relationship with Eleanor?"
 }
 },
-"size": Vector2(540, 240),
-"speaker": "Lillian"
+"size": Vector2(520, 308.00006),
+"speaker": 1
 },
 &"1_2": {
-"dialogue": "",
-"offset": Vector2(368.0204, 558.11523),
+"dialogue": "We were fine… perfectly fine. We understood each other.",
+"offset": Vector2(940, 0),
 "options": {
 0: {
 "condition": {},
@@ -36,8 +46,34 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.00006, 240.00037),
-"speaker": ""
+"size": Vector2(359.99976, 300),
+"speaker": 1
+},
+&"1_3": {
+"dialogue": "No... In fact, he seemed to be doing really well despite his old age, I don't know what happened to him! (sobs)",
+"offset": Vector2(940, 320),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(359.9995, 279.99997),
+"speaker": 1
+},
+&"1_4": {
+"dialogue": "",
+"offset": Vector2(940, 620),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(360, 259.99982),
+"speaker": 1
 }
 }
-strays = Array[String](["1_2"])
+characters = "res://GameCharacters.tres"

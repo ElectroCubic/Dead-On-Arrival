@@ -1,0 +1,79 @@
+[gd_scene load_steps=14 format=3 uid="uid://t76e4xkq3twp"]
+
+[ext_resource type="PackedScene" uid="uid://c15yqkryj3lhd" path="res://scenes/levels/level.tscn" id="1_x3bar"]
+[ext_resource type="Script" uid="uid://dscllwciokinx" path="res://scenes/levels/study.gd" id="2_m1lvq"]
+[ext_resource type="Texture2D" uid="uid://6qoxmto6xrwc" path="res://graphics/backgrounds/Group 2.png" id="3_d0r5w"]
+[ext_resource type="Resource" uid="uid://dtivp056m5sbj" path="res://BlackwoodIntro.tres" id="4_abu8i"]
+[ext_resource type="PackedScene" uid="uid://c5lt4q8eaqj4q" path="res://scenes/item.tscn" id="5_uj7x3"]
+[ext_resource type="Texture2D" uid="uid://bab2fnnwllxar" path="res://graphics/characters/Dead_old_man-removebg-preview.svg" id="5_yot07"]
+[ext_resource type="Texture2D" uid="uid://dhsrk4mpx5xvo" path="res://graphics/objects/clues/burned_paper-removebg-preview.png" id="6_txdcf"]
+[ext_resource type="Texture2D" uid="uid://d4n1dnklion2m" path="res://graphics/objects/clues/half_solved_puzzle_box-removebg-preview.png" id="7_txdcf"]
+[ext_resource type="Texture2D" uid="uid://ckfvom1e77a6b" path="res://graphics/objects/clues/will-removebg-preview.png" id="8_d51pg"]
+[ext_resource type="PackedScene" uid="uid://bh7rkcb0te8ot" path="res://scenes/arrow.tscn" id="10_n6ocm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_txdcf"]
+size = Vector2(70, 45)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d51pg"]
+size = Vector2(76, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n6ocm"]
+size = Vector2(60, 76)
+
+[node name="Study" instance=ExtResource("1_x3bar")]
+script = ExtResource("2_m1lvq")
+
+[node name="Background" parent="." index="0"]
+position = Vector2(572.4535, 323.39398)
+scale = Vector2(0.7343811, 0.7578812)
+texture = ExtResource("3_d0r5w")
+
+[node name="DialogueBox" parent="." index="1"]
+data = ExtResource("4_abu8i")
+start_id = "STUDY"
+
+[node name="Burnt Papers" parent="Items" index="0" instance=ExtResource("5_uj7x3")]
+position = Vector2(666, 436)
+item_name = "Burnt Papers"
+item_icon = ExtResource("6_txdcf")
+item_info = "Papers found burnt in the fireplace, room also smells like smoke, perhaps someone threw them?"
+item_id = "1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Items/Burnt Papers" index="1"]
+position = Vector2(51, 55.5)
+shape = SubResource("RectangleShape2D_txdcf")
+
+[node name="Puzzle Box" parent="Items" index="1" instance=ExtResource("5_uj7x3")]
+position = Vector2(339, 361)
+item_name = "Puzzle Box"
+item_icon = ExtResource("7_txdcf")
+item_info = "Alistair's greatest masterpiece yet, it looks like there is some kind of residue on the dials."
+item_id = "2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Items/Puzzle Box" index="1"]
+position = Vector2(51, 54)
+shape = SubResource("RectangleShape2D_d51pg")
+
+[node name="Unsigned Will" parent="Items" index="2" instance=ExtResource("5_uj7x3")]
+position = Vector2(1, 602)
+scale = Vector2(1, 0.28000486)
+item_name = "Unsigned Will"
+item_icon = ExtResource("8_d51pg")
+item_info = "Alistair's incomplete will to bestow the entire property and wealth to Lillian Blackwood"
+click_required = 3
+item_id = "3"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Items/Unsigned Will" index="1"]
+position = Vector2(50, 49)
+shape = SubResource("RectangleShape2D_n6ocm")
+
+[node name="DeadOldMan" type="Sprite2D" parent="." index="5"]
+position = Vector2(543, 535)
+rotation = 0.0779786
+scale = Vector2(0.4676431, 0.46764314)
+texture = ExtResource("5_yot07")
+
+[node name="LeftArrow" parent="." index="6" instance=ExtResource("10_n6ocm")]
+position = Vector2(46, 405)
+rotation = 3.1415927
+target_scene = "res://scenes/levels/intro.tscn"

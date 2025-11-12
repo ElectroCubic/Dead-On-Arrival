@@ -5,17 +5,42 @@
 [resource]
 script = ExtResource("1_x7uby")
 starts = {
-"INTRO": &"0_1"
+"DINNER": &"0_2",
+"INTRO": &"0_1",
+"STUDY": &"0_3"
 }
 nodes = {
 &"0_1": {
 "link": &"1_1",
-"offset": Vector2(0, 0),
+"offset": Vector2(-680, -880),
 "start_id": "INTRO"
 },
+&"0_2": {
+"link": &"1_6",
+"offset": Vector2(-360, -320),
+"start_id": "DINNER"
+},
+&"0_3": {
+"link": &"1_12",
+"offset": Vector2(-380, 120),
+"start_id": "STUDY"
+},
 &"1_1": {
-"dialogue": "Quite the storm tonight. [wait time=1] I hope this ‘special announcement’ is worth the trip.",
-"offset": Vector2(220, 0),
+"dialogue": "(Quite the storm tonight. I hope this ‘special announcement’ is worth the trip)",
+"offset": Vector2(-440, -880),
+"options": {
+0: {
+"condition": {},
+"link": &"1_9",
+"text": ""
+}
+},
+"size": Vector2(300.0005, 380),
+"speaker": 3
+},
+&"1_10": {
+"dialogue": "Hello, Detective, what brings you here today, huh? Very unexpected arrival I should say. [wait time=1] Oh, my dad's here... ",
+"offset": Vector2(260, -880),
 "options": {
 0: {
 "condition": {},
@@ -23,12 +48,103 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 400.00043),
-"speaker": "Detective"
+"size": Vector2(300, 360.00006),
+"speaker": 2
+},
+&"1_11": {
+"dialogue": "Wait, I'll go and fetch him myself. [wait time=1] He invited me, after all.",
+"offset": Vector2(1020, -300),
+"options": {
+0: {
+"condition": {},
+"link": &"3_3",
+"text": ""
+}
+},
+"size": Vector2(300.00012, 300.0003),
+"speaker": 3
+},
+&"1_12": {
+"dialogue": "Mr. Alistair? [wait time=1] Hello? It's me. Why is he not answering me??",
+"offset": Vector2(-120, 140),
+"options": {
+0: {
+"condition": {},
+"link": &"1_13",
+"text": ""
+}
+},
+"size": Vector2(319.99976, 279.99988),
+"speaker": 3
+},
+&"1_13": {
+"dialogue": "Hmm... looks like the door is locked from the inside. I'll have to force myself in. (door lock breaks)",
+"offset": Vector2(260, 120),
+"options": {
+0: {
+"condition": {},
+"link": &"1_14",
+"text": ""
+}
+},
+"size": Vector2(319.99976, 300.0005),
+"speaker": 3
+},
+&"1_14": {
+"dialogue": "OH NO! Mr. Alistair! ",
+"offset": Vector2(640, 120),
+"options": {
+0: {
+"condition": {},
+"link": &"1_15",
+"text": ""
+}
+},
+"size": Vector2(319.9995, 300.0005),
+"speaker": 3
+},
+&"1_15": {
+"dialogue": "What is happening? Why... (gasps) [wait time=2] [shake] ALISTAIR!!! [/shake]",
+"offset": Vector2(1020, 120),
+"options": {
+0: {
+"condition": {},
+"link": &"1_16",
+"text": ""
+}
+},
+"size": Vector2(300.00012, 300),
+"speaker": 1
+},
+&"1_16": {
+"dialogue": "Dad!? What happened here?[wait time=1] Is someone going to explain to me why is he lying on the floor?",
+"offset": Vector2(1380, 120),
+"options": {
+0: {
+"condition": {},
+"link": &"1_17",
+"text": ""
+}
+},
+"size": Vector2(360.00018, 319.99982),
+"speaker": 2
+},
+&"1_17": {
+"dialogue": "[wait speed=5]He's...... gone. [/wait]",
+"offset": Vector2(1796.6451, 122.038124),
+"options": {
+0: {
+"condition": {},
+"link": &"3_1",
+"text": ""
+}
+},
+"size": Vector2(319.99988, 240.00014),
+"speaker": 3
 },
 &"1_2": {
-"dialogue": "Ah, Detective! [wait time=1] Just in time. I’ve solved the final piece of my greatest puzzle! Tonight, I reveal something extraordinary.",
-"offset": Vector2(600, 0),
+"dialogue": "Ah, Detective! [wait time=1] Just in time. I was about to finish working on my greatest puzzle yet. Tonight, I reveal something extraordinary! (coughs)",
+"offset": Vector2(600, -880),
 "options": {
 0: {
 "condition": {},
@@ -36,12 +152,12 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(320.00058, 400.00067),
-"speaker": "Alistair"
+"size": Vector2(319.9995, 400.00012),
+"speaker": 0
 },
 &"1_3": {
-"dialogue": "Darling, must everything be about your inventions? Let the detective rest, the dinner is ready.",
-"offset": Vector2(1000, 0),
+"dialogue": "Darling, must everything be about your inventions? Let the detective rest, the dinner is ready. You can show us your puzzles later.",
+"offset": Vector2(980, -880),
 "options": {
 0: {
 "condition": {},
@@ -49,12 +165,12 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(319.99957, 400.00055),
-"speaker": "Lillian"
+"size": Vector2(319.9994, 400.00085),
+"speaker": 1
 },
 &"1_4": {
 "dialogue": "Father never rests. [wait time=1] Not until every piece is in its place... isn’t that right, Father? (smirks)",
-"offset": Vector2(1400, 0),
+"offset": Vector2(1380, -880),
 "options": {
 0: {
 "condition": {},
@@ -62,20 +178,88 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(320.00073, 400.00055),
-"speaker": "Eleanor"
+"size": Vector2(320.00256, 400.00085),
+"speaker": 2
 },
 &"1_5": {
 "dialogue": "You’ll understand soon enough. I’ll fetch my puzzle box from the study. [wait time=1] Detective, you can join the others and wait for me in the Dining Hall, I shall be back within a few minutes.",
-"offset": Vector2(1800, 0),
+"offset": Vector2(1780, -880),
 "options": {
 0: {
 "condition": {},
-"link": "END",
+"link": &"3_2",
 "text": ""
 }
 },
-"size": Vector2(340.0003, 400.00055),
-"speaker": "Alistair"
+"size": Vector2(339.9995, 400.00085),
+"speaker": 0
+},
+&"1_6": {
+"dialogue": "Oh my! It's been 30 mins since he left, what is taking him so long? [wait time=1] The dinner is getting cold...",
+"offset": Vector2(-120, -320),
+"options": {
+0: {
+"condition": {},
+"link": &"1_7",
+"text": ""
+}
+},
+"size": Vector2(320, 320.00024),
+"speaker": 1
+},
+&"1_7": {
+"dialogue": "Maybe he's still working on his \"greatest puzzle\" which he was so excited to share about, but I guess he fell asleep while working again. (soft chuckle)",
+"offset": Vector2(260, -320),
+"options": {
+0: {
+"condition": {},
+"link": &"1_8",
+"text": ""
+}
+},
+"size": Vector2(300, 320.00024),
+"speaker": 2
+},
+&"1_8": {
+"dialogue": "I can't wait anymore, I'll go and call him right now. He's getting too obsessed with his puzzles lately! (frowns)",
+"offset": Vector2(640, -320),
+"options": {
+0: {
+"condition": {},
+"link": &"1_11",
+"text": ""
+}
+},
+"size": Vector2(300, 320.00024),
+"speaker": 1
+},
+&"1_9": {
+"dialogue": "Hello, Mr. Detective, nice to meet you! Mr. Alistair will soon come down from his study and meet you shortly. [wait time=1]I am Lillian, Mr. Alistair's wife, and this is Eleanor, Alistair's daughter.",
+"offset": Vector2(-100, -880),
+"options": {
+0: {
+"condition": {},
+"link": &"1_10",
+"text": ""
+}
+},
+"size": Vector2(300.00024, 380),
+"speaker": 1
+},
+&"3_1": {
+"link": "END",
+"offset": Vector2(2260, 300),
+"signalValue": "Start_Investigation"
+},
+&"3_2": {
+"link": "END",
+"offset": Vector2(2260, -540),
+"signalValue": "DinnerHall"
+},
+&"3_3": {
+"link": "END",
+"offset": Vector2(1408.5161, -48.539803),
+"signalValue": "Study"
 }
 }
+characters = "res://GameCharacters.tres"
