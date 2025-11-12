@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="CharacterList" load_steps=10 format=3 uid="uid://bx1r4ptykkis7"]
+
+[ext_resource type="Script" uid="uid://je0s4w1xsail" path="res://addons/dialogue_nodes/objects/Character.gd" id="1_3jsac"]
+[ext_resource type="Texture2D" uid="uid://b6dl8sswqrj88" path="res://graphics/characters/Old man_new.svg" id="2_bbrrs"]
+[ext_resource type="Texture2D" uid="uid://dghc6d0qksi6y" path="res://graphics/characters/The_young_wife-removebg-preview.svg" id="3_7tf3f"]
+[ext_resource type="Texture2D" uid="uid://lukrbccnl7j7" path="res://graphics/characters/The_killer_daughter-removebg-preview.svg" id="4_v77un"]
+[ext_resource type="Script" uid="uid://c1m2xaypvjkuc" path="res://addons/dialogue_nodes/objects/CharacterList.gd" id="5_11n45"]
+
+[sub_resource type="Resource" id="Resource_b0nex"]
+script = ExtResource("1_3jsac")
+name = "Alistair"
+image = ExtResource("2_bbrrs")
+color = Color(0.98199487, 0.2326733, 0.2326733, 1)
+metadata/_custom_type_script = "uid://bgnnvdyl7skf7"
+
+[sub_resource type="Resource" id="Resource_xqgju"]
+script = ExtResource("1_3jsac")
+name = "Lillian"
+image = ExtResource("3_7tf3f")
+color = Color(0.24507788, 0.95484024, 0.48687404, 1)
+metadata/_custom_type_script = "uid://bgnnvdyl7skf7"
+
+[sub_resource type="Resource" id="Resource_gk02f"]
+script = ExtResource("1_3jsac")
+name = "Eleanor"
+image = ExtResource("4_v77un")
+color = Color(0.9529412, 0.22745095, 0.6236157, 1)
+metadata/_custom_type_script = "uid://bgnnvdyl7skf7"
+
+[sub_resource type="Resource" id="Resource_ediwy"]
+script = ExtResource("1_3jsac")
+name = "Detective"
+color = Color(0.9684175, 0.66695887, 0.31861964, 1)
+metadata/_custom_type_script = "uid://bgnnvdyl7skf7"
+
+[resource]
+script = ExtResource("5_11n45")
+characters = Array[ExtResource("1_3jsac")]([SubResource("Resource_b0nex"), SubResource("Resource_xqgju"), SubResource("Resource_gk02f"), SubResource("Resource_ediwy")])

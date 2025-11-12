@@ -1,11 +1,24 @@
-[gd_scene load_steps=8 format=3 uid="uid://c15yqkryj3lhd"]
+[gd_scene load_steps=15 format=3 uid="uid://c15yqkryj3lhd"]
 
 [ext_resource type="Script" uid="uid://cw6nnw2askfce" path="res://scenes/levels/level.gd" id="1_377w7"]
-[ext_resource type="PackedScene" uid="uid://0yr0ktghvyd6" path="res://scenes/UI/dialogue_box.tscn" id="2_bovvr"]
+[ext_resource type="Script" uid="uid://dipo6uwa3jppo" path="res://addons/dialogue_nodes/objects/DialogueBox.gd" id="2_icy5c"]
+[ext_resource type="Theme" uid="uid://dc6c1peo4pfyr" path="res://addons/dialogue_nodes/themes/bubbly.theme" id="2_rmjfq"]
+[ext_resource type="Script" uid="uid://ba8n4wyuqdpyr" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="3_rmjfq"]
+[ext_resource type="Script" uid="uid://d1pvbg1d0npxv" path="res://addons/dialogue_nodes/objects/bbcodeGhost.gd" id="4_7pb6i"]
 [ext_resource type="Script" uid="uid://bvjdfspo644an" path="res://scenes/UI/inventory_ui.gd" id="5_urvlt"]
+[ext_resource type="Script" uid="uid://br1cj7vkts6vx" path="res://addons/dialogue_nodes/objects/bbcodeMatrix.gd" id="5_xfk5q"]
 [ext_resource type="FontFile" uid="uid://yhhpudnvmaps" path="res://resources/fonts/SpecialElite-Regular.ttf" id="6_d4w6o"]
 [ext_resource type="Texture2D" uid="uid://cktfsmj3kqqj6" path="res://graphics/UI/BoxesBanners/Box_Blue_Rounded.svg" id="6_ouxo3"]
 [ext_resource type="Script" uid="uid://08qvdfqjbepi" path="res://scenes/UI/case_log_ui.gd" id="7_mbbpy"]
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_qec1o"]
+script = ExtResource("3_rmjfq")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_hahyq"]
+script = ExtResource("4_7pb6i")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_1vmni"]
+script = ExtResource("5_xfk5q")
 
 [sub_resource type="LabelSettings" id="LabelSettings_urvlt"]
 font = ExtResource("6_d4w6o")
@@ -19,11 +32,24 @@ z_index = -10
 position = Vector2(574.9999, 217.49997)
 scale = Vector2(2.1054542, 2.1725001)
 
-[node name="DialogueBox" parent="." instance=ExtResource("2_bovvr")]
+[node name="DialogueBox" type="Panel" parent="."]
+visible = false
+z_index = 10
 offset_left = 76.0
 offset_top = 376.0
 offset_right = 1076.0
 offset_bottom = 632.0
+theme = ExtResource("2_rmjfq")
+script = ExtResource("2_icy5c")
+start_id = "START"
+hide_portrait = true
+portrait_offset = Vector2(200, -150)
+portrait_size = Vector2(0.7, 0.7)
+skip_input_action = "SkipDialogue"
+custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_qec1o"), SubResource("RichTextEffect_hahyq"), SubResource("RichTextEffect_1vmni")])
+options_alignment = 1
+options_vertical = true
+metadata/_custom_type_script = "uid://dipo6uwa3jppo"
 
 [node name="InventoryUI" type="Control" parent="."]
 layout_mode = 3

@@ -4,7 +4,7 @@ class_name Level
 @onready var case_log_ui := $CaseLogUI
 @onready var inventory_ui := $InventoryUI
 @onready var dialogue_box: DialogueBox = $DialogueBox
-@onready var characters_list := preload("res://examples/Characters.tres").characters
+@onready var characters_list := preload("res://GameCharacters.tres").characters
 
 var speaker_dict: Dictionary = {}
 

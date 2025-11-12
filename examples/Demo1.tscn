@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://c2sr0dxa5ad11" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="3_0vg3b"]
 [ext_resource type="Resource" uid="uid://dj818hys8f3u8" path="res://examples/ExampleBasic.tres" id="3_yex7d"]
 [ext_resource type="Resource" uid="uid://btriowhsx04c2" path="res://examples/ExampleBBCodes.tres" id="4_ay03t"]
-[ext_resource type="Resource" uid="uid://bjme2drtas671" path="res://examples/ExampleBranching.tres" id="5_ifbb7"]
+[ext_resource type="Resource" uid="uid://brn541qct0fa4" path="res://examples/ExampleBranching.tres" id="5_ifbb7"]
 [ext_resource type="Resource" uid="uid://c303qivlsn30t" path="res://examples/ExampleCharacters.tres" id="6_arg21"]
 [ext_resource type="Resource" uid="uid://b4os1qum2hx0x" path="res://examples/ExampleSignals.tres" id="7_18syg"]
 [ext_resource type="Resource" uid="uid://cbu4k4hs8fk5s" path="res://examples/ExampleVariables.tres" id="8_4fu3f"]
@@ -98,7 +98,6 @@ hue_variation_min = -1.0
 hue_variation_max = 1.0
 
 [node name="DialogueBox" parent="." instance=ExtResource("10_sphwv")]
-visible = false
 layout_mode = 0
 anchors_preset = 0
 anchor_left = 0.0
