@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dknxvkswkenvs"
-path="res://.godot/imported/Icon_Large_StarGrey.svg-3b4af81093757b6c229ed48f16e87310.ctex"
+uid="uid://bngeg310itch3"
+path="res://.godot/imported/Lillian's hankie.png-1dbe6aba83a30d30a0e522b1f69b978f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/UI/Icons/Icon_Large_StarGrey.svg"
-dest_files=["res://.godot/imported/Icon_Large_StarGrey.svg-3b4af81093757b6c229ed48f16e87310.ctex"]
+source_file="res://graphics/objects/clues/Lillian's hankie.png"
+dest_files=["res://.godot/imported/Lillian's hankie.png-1dbe6aba83a30d30a0e522b1f69b978f.ctex"]
 
 [params]
 
@@ -38,6 +38,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=0.2
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

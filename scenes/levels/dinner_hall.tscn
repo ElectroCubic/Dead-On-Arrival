@@ -29,7 +29,6 @@ scale = Vector2(1.0322014, 0.40447247)
 item_name = "Stained Gloves"
 item_icon = ExtResource("6_x175j")
 item_info = "The gloves seems to be covered with some kind of plant-extract, probably from the garden"
-click_required = 3
 item_id = "4"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Items/Stained Gloves" index="1"]

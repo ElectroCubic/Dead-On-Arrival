@@ -2,6 +2,13 @@ extends Node
 
 class_name Global
 
+@warning_ignore("unused_signal")
+signal stat_change
+
+var star_level: int = 3:
+	set(value):
+		star_level = value
+		stat_change.emit()
 var investigation: bool = false
 var is_dialogue_playing: bool = false
 var inventory_items: Array = []

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://t76e4xkq3twp"]
+[gd_scene load_steps=16 format=3 uid="uid://t76e4xkq3twp"]
 
 [ext_resource type="PackedScene" uid="uid://c15yqkryj3lhd" path="res://scenes/levels/level.tscn" id="1_x3bar"]
 [ext_resource type="Script" uid="uid://dscllwciokinx" path="res://scenes/levels/study.gd" id="2_m1lvq"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dhsrk4mpx5xvo" path="res://graphics/objects/clues/burned_paper-removebg-preview.png" id="6_txdcf"]
 [ext_resource type="Texture2D" uid="uid://d4n1dnklion2m" path="res://graphics/objects/clues/half_solved_puzzle_box-removebg-preview.png" id="7_txdcf"]
 [ext_resource type="Texture2D" uid="uid://ckfvom1e77a6b" path="res://graphics/objects/clues/will-removebg-preview.png" id="8_d51pg"]
+[ext_resource type="Texture2D" uid="uid://bngeg310itch3" path="res://graphics/objects/clues/Lillian's hankie.png" id="9_2py5k"]
 [ext_resource type="PackedScene" uid="uid://bh7rkcb0te8ot" path="res://scenes/arrow.tscn" id="10_n6ocm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_txdcf"]
@@ -19,6 +20,9 @@ size = Vector2(76, 36)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n6ocm"]
 size = Vector2(60, 76)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l0mfc"]
+size = Vector2(79, 95)
 
 [node name="Study" instance=ExtResource("1_x3bar")]
 script = ExtResource("2_m1lvq")
@@ -60,12 +64,23 @@ scale = Vector2(1, 0.28000486)
 item_name = "Unsigned Will"
 item_icon = ExtResource("8_d51pg")
 item_info = "Alistair's incomplete will to bestow the entire property and wealth to Lillian Blackwood"
-click_required = 3
 item_id = "3"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Items/Unsigned Will" index="1"]
 position = Vector2(50, 49)
 shape = SubResource("RectangleShape2D_n6ocm")
+
+[node name="Hankie" parent="Items" index="3" instance=ExtResource("5_uj7x3")]
+position = Vector2(1009, 446.00003)
+scale = Vector2(1, 0.19999997)
+item_name = "Handkerchief"
+item_icon = ExtResource("9_2py5k")
+item_info = "A rather clean hankie founc near the window table, it has a name embroidered inside as \"Lily\""
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Items/Hankie" index="1"]
+position = Vector2(46.49994, 37.50049)
+scale = Vector2(0.99999976, 0.9999998)
+shape = SubResource("RectangleShape2D_l0mfc")
 
 [node name="DeadOldMan" type="Sprite2D" parent="." index="5"]
 position = Vector2(543, 535)

@@ -1,0 +1,210 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://b6swqhvn8cmkd"]
+
+[ext_resource type="Script" uid="uid://c2sr0dxa5ad11" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_02j0s"]
+
+[resource]
+script = ExtResource("1_02j0s")
+starts = {
+"Eleanor": &"0_1"
+}
+nodes = {
+&"0_1": {
+"link": &"1_1",
+"offset": Vector2(-540.23987, -117.33047),
+"start_id": "Eleanor"
+},
+&"1_1": {
+"dialogue": "Hey, how are you doing?",
+"offset": Vector2(-240, -120),
+"options": {
+0: {
+"condition": {},
+"link": &"1_3",
+"text": "How was your relationship with your Father?"
+},
+1: {
+"condition": {},
+"link": &"1_7",
+"text": "Where were you before I came to the Manor?"
+},
+2: {
+"condition": {},
+"link": &"1_2",
+"text": "We'll talk later..."
+}
+},
+"size": Vector2(400.00024, 308.00006),
+"speaker": 2
+},
+&"1_10": {
+"dialogue": "My my, you're onto me, well go ahead, what do you think I was doing?",
+"offset": Vector2(1380, 740),
+"options": {
+0: {
+"condition": {},
+"link": &"3_3",
+"text": ""
+}
+},
+"size": Vector2(300, 259.99988),
+"speaker": 2
+},
+&"1_11": {
+"dialogue": "Assume what you must, I don't like how you're going about this.",
+"offset": Vector2(1415.7825, 160.83109),
+"options": {
+0: {
+"condition": {},
+"link": &"3_1",
+"text": "Ok..."
+}
+},
+"size": Vector2(320.00006, 279.99982),
+"speaker": 2
+},
+&"1_2": {
+"dialogue": "Let me know if you want to know anything else, I got all day.",
+"offset": Vector2(300, 480),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300.00024, 260.00085),
+"speaker": 2
+},
+&"1_3": {
+"dialogue": "My father and I were close, we understood each other very well. [wait time=1] I am heartbroken to see him go like this...",
+"offset": Vector2(280, -440),
+"options": {
+0: {
+"condition": {},
+"link": &"1_5",
+"text": "Did you enter Alistair's room before the dinner?"
+},
+1: {
+"condition": {},
+"link": &"1_4",
+"text": "No you're not! I think you did it."
+}
+},
+"size": Vector2(399.9995, 320.00012),
+"speaker": 2
+},
+&"1_4": {
+"dialogue": "Hey, don't go falsely accusing like that! Doesn't suit well for a reputed detective like you! Ha! ",
+"offset": Vector2(960, -200),
+"options": {
+0: {
+"condition": {},
+"link": &"3_1",
+"text": "Hmm... My bad."
+}
+},
+"size": Vector2(319.99963, 320.00018),
+"speaker": 2
+},
+&"1_5": {
+"dialogue": "No I did not, I was in the dinner hall reading a book. I had no reason to go meet him.",
+"offset": Vector2(960, -560),
+"options": {
+0: {
+"condition": {},
+"link": &"1_6",
+"text": "I have evidence to prove you went in there!"
+},
+1: {
+"condition": {},
+"link": &"1_1",
+"text": "Ok... I can believe that."
+}
+},
+"size": Vector2(380.00037, 320),
+"speaker": 2
+},
+&"1_6": {
+"dialogue": "Oh, now we're talking, what exactly proves that I went there?",
+"offset": Vector2(1507.6427, -476.3998),
+"options": {
+0: {
+"condition": {},
+"link": &"3_2",
+"text": ""
+}
+},
+"size": Vector2(300.00073, 240),
+"speaker": 2
+},
+&"1_7": {
+"dialogue": "Let's see... I was first in the garden roaming about with my book and studying the plants, then I went inside beacause of the storm.",
+"offset": Vector2(300, 20),
+"options": {
+0: {
+"condition": {},
+"link": &"1_8",
+"text": "Ok... then?"
+},
+1: {
+"condition": {},
+"link": &"1_9",
+"text": "What were you doing in the Garden exactly?"
+}
+},
+"size": Vector2(380, 299.99963),
+"speaker": 2
+},
+&"1_8": {
+"dialogue": "Then I was in the hall sitting with my book and helping out Lillian in making dinner.",
+"offset": Vector2(880, 140),
+"options": {
+0: {
+"condition": {},
+"link": &"1_1",
+"text": "Ok..."
+},
+1: {
+"condition": {},
+"link": &"1_11",
+"text": "Nope I won't fall for this! Are you trying to trick me?"
+}
+},
+"size": Vector2(420.00012, 279.99994),
+"speaker": 2
+},
+&"1_9": {
+"dialogue": "Oh, I was studying the plants for my research on plant substances, how they react with human skin, all that, you won't understand.",
+"offset": Vector2(800, 440),
+"options": {
+0: {
+"condition": {},
+"link": &"1_1",
+"text": "Interesting..."
+},
+1: {
+"condition": {},
+"link": &"1_10",
+"text": "I have evidence you were doing something else as well"
+}
+},
+"size": Vector2(459.99963, 300.00024),
+"speaker": 2
+},
+&"3_1": {
+"link": &"1_1",
+"offset": Vector2(1840, 20),
+"signalValue": "ReduceStar"
+},
+&"3_2": {
+"link": "END",
+"offset": Vector2(1880, -260),
+"signalValue": "ShowPapers"
+},
+&"3_3": {
+"link": "END",
+"offset": Vector2(1760, 920),
+"signalValue": "ShowGloves"
+}
+}
+characters = "res://GameCharacters.tres"

@@ -2,6 +2,7 @@ extends Control
 class_name Inventory
 
 @onready var slots := $HBoxContainer.get_children()
+signal show_item(item)
 
 var inventory_items: Array = []
 
@@ -34,8 +35,8 @@ func _refresh_slots():
 			slots[i].disabled = true
 
 func _on_slot_pressed(slot):
-	var index = slots.find(slot)
-	if index >= 0 and index < Globals.inventory_items.size():
-		var item = Globals.inventory_items[index]
-		print("Selected:", item["name"], "-", item["info"])
-		# TODO: Perform more actions later if needed
+	if Globals.is_dialogue_playing:
+		var index = slots.find(slot)
+		if index >= 0 and index < Globals.inventory_items.size():
+			var item = Globals.inventory_items[index]
+			show_item.emit(item)

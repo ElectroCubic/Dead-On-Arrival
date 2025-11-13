@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c15yqkryj3lhd"]
+[gd_scene load_steps=19 format=3 uid="uid://c15yqkryj3lhd"]
 
 [ext_resource type="Script" uid="uid://cw6nnw2askfce" path="res://scenes/levels/level.gd" id="1_377w7"]
 [ext_resource type="Script" uid="uid://dipo6uwa3jppo" path="res://addons/dialogue_nodes/objects/DialogueBox.gd" id="2_icy5c"]
@@ -12,6 +12,8 @@
 [ext_resource type="Script" uid="uid://08qvdfqjbepi" path="res://scenes/UI/case_log_ui.gd" id="7_mbbpy"]
 [ext_resource type="Texture2D" uid="uid://dqmhwu7btbeut" path="res://graphics/UI/ButtonIcons/IconButton_Large_Orange_Square.svg" id="11_xfk5q"]
 [ext_resource type="Texture2D" uid="uid://dh1py4huc0l48" path="res://graphics/UI/Icons/Icon_Small_WhiteOutline_LookingGlass.svg" id="12_qogh7"]
+[ext_resource type="Script" uid="uid://bf6cfc38xdmen" path="res://scenes/levels/star_level_ui.gd" id="13_8iyoh"]
+[ext_resource type="Texture2D" uid="uid://cqt73k4xl760i" path="res://graphics/UI/Icons/Icon_Large_Star_SeethroughOutline.svg" id="13_qogh7"]
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_qec1o"]
 script = ExtResource("3_rmjfq")
@@ -224,4 +226,54 @@ texture = ExtResource("12_qogh7")
 expand_mode = 1
 metadata/_edit_lock_ = true
 
+[node name="LillianBtn" type="Button" parent="InterrogateBtn"]
+visible = false
+layout_mode = 0
+offset_left = -57.0
+offset_top = 80.0
+offset_right = 71.0
+offset_bottom = 115.0
+text = "Lillian"
+
+[node name="EleanorBtn" type="Button" parent="InterrogateBtn"]
+visible = false
+layout_mode = 0
+offset_left = -57.0
+offset_top = 119.0
+offset_right = 71.0
+offset_bottom = 152.0
+text = "Eleanor"
+
+[node name="StarLevel" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 862.0
+offset_top = 102.0
+offset_right = 862.0
+offset_bottom = 102.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("13_8iyoh")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="StarLevel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="StarLevel/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("13_qogh7")
+
+[node name="TextureRect2" type="TextureRect" parent="StarLevel/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("13_qogh7")
+
+[node name="TextureRect3" type="TextureRect" parent="StarLevel/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("13_qogh7")
+
 [connection signal="pressed" from="InterrogateBtn" to="." method="_on_interrogate_btn_pressed"]
+[connection signal="pressed" from="InterrogateBtn/LillianBtn" to="." method="_on_lillian_btn_pressed"]
+[connection signal="pressed" from="InterrogateBtn/EleanorBtn" to="." method="_on_eleanor_btn_pressed"]

@@ -5,7 +5,9 @@
 [resource]
 script = ExtResource("1_8ogae")
 starts = {
-"Lillian": &"0_1"
+"Lillian": &"0_1",
+"NO": &"0_3",
+"YES": &"0_2"
 }
 nodes = {
 &"0_1": {
@@ -13,45 +15,73 @@ nodes = {
 "offset": Vector2(0, 220),
 "start_id": "Lillian"
 },
+&"0_2": {
+"link": &"1_8",
+"offset": Vector2(96.87561, 1136.7203),
+"start_id": "YES"
+},
+&"0_3": {
+"link": &"1_10",
+"offset": Vector2(95.647446, 1561.0138),
+"start_id": "NO"
+},
 &"1_1": {
-"dialogue": "What do you want to know?",
+"dialogue": "Hey, Detective, how can I help?",
 "offset": Vector2(260, 220),
 "options": {
 0: {
 "condition": {},
 "link": &"1_2",
-"text": "How well did you get along with your husband in recent weeks?"
+"text": "Was there any argument recently between you and Alistair?"
 },
 1: {
 "condition": {},
-"link": &"1_3",
-"text": "Did you have any prior knowledge about Mr. Alistair's condition?"
+"link": &"1_4",
+"text": "What were you doing before I came here?"
 },
 2: {
 "condition": {},
-"link": &"1_4",
-"text": "Can you tell me about your relationship with Eleanor?"
+"link": &"1_3",
+"text": "We'll talk later..."
 }
 },
-"size": Vector2(520, 308.00006),
+"size": Vector2(520.00024, 342.9994),
+"speaker": 1
+},
+&"1_10": {
+"dialogue": "No that doesn't prove anything! You're wrong!",
+"offset": Vector2(400, 1560),
+"options": {
+0: {
+"condition": {},
+"link": &"3_3",
+"text": "Ummm...."
+}
+},
+"size": Vector2(300.00018, 279.99963),
 "speaker": 1
 },
 &"1_2": {
-"dialogue": "We were fine… perfectly fine. We understood each other.",
-"offset": Vector2(940, 0),
+"dialogue": "No, we didn't have any arguments, but I think Alistair was really upset with Eleanor with all the company stuff and I can't really remember why.",
+"offset": Vector2(940, -100),
 "options": {
 0: {
 "condition": {},
-"link": "END",
-"text": ""
+"link": &"1_5",
+"text": "Tell me about Eleanor."
+},
+1: {
+"condition": {},
+"link": &"1_6",
+"text": "Hey tell me, why was he upset?"
 }
 },
-"size": Vector2(359.99976, 300),
+"size": Vector2(359.99933, 300.00043),
 "speaker": 1
 },
 &"1_3": {
-"dialogue": "No... In fact, he seemed to be doing really well despite his old age, I don't know what happened to him! (sobs)",
-"offset": Vector2(940, 320),
+"dialogue": "Ok, I'll be right here if you need something else!",
+"offset": Vector2(920, 740),
 "options": {
 0: {
 "condition": {},
@@ -59,12 +89,82 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(359.9995, 279.99997),
+"size": Vector2(340, 260),
 "speaker": 1
 },
 &"1_4": {
-"dialogue": "",
-"offset": Vector2(940, 620),
+"dialogue": "I was in the Garden, watering the plants, I didn't even enter the Study before you came!",
+"offset": Vector2(920, 340),
+"options": {
+0: {
+"condition": {},
+"link": &"1_7",
+"text": "I have evidence to show you were in the study before!"
+},
+1: {
+"condition": {},
+"link": &"1_1",
+"text": "Ok..."
+}
+},
+"size": Vector2(440.00024, 339.99988),
+"speaker": 1
+},
+&"1_5": {
+"dialogue": "Eleanor is a high achiever, she's almost too... [wait time=1] perfect sometimes. She's a book worm as well, obviously, and she loves to study those plants in the garden, she's done a whole degree in that stuff!",
+"offset": Vector2(1420, -300),
+"options": {
+0: {
+"condition": {},
+"link": &"1_1",
+"text": "Ok..."
+}
+},
+"size": Vector2(340.00085, 260),
+"speaker": 1
+},
+&"1_6": {
+"dialogue": "I said I dont know! Please stop asking about that!",
+"offset": Vector2(1420, 0),
+"options": {
+0: {
+"condition": {},
+"link": &"3_1",
+"text": "Ok..."
+}
+},
+"size": Vector2(340.00085, 299.99976),
+"speaker": 1
+},
+&"1_7": {
+"dialogue": "Ok prove it!",
+"offset": Vector2(1500, 420),
+"options": {
+0: {
+"condition": {},
+"link": &"3_2",
+"text": ""
+}
+},
+"size": Vector2(300.00012, 240.00003),
+"speaker": 1
+},
+&"1_8": {
+"dialogue": "Oh, heavens… I must have forgotten it in the rush. Everything happened so quickly, the smoke, the shouting, I didn’t even think to take it back. ",
+"offset": Vector2(420, 1140),
+"options": {
+0: {
+"condition": {},
+"link": &"1_9",
+"text": "What Heppened?"
+}
+},
+"size": Vector2(339.9997, 299.99988),
+"speaker": 1
+},
+&"1_9": {
+"dialogue": "There was a bit of an incident before, some smoke was in Alistair's room. I went there to help and I saw Eleanor coming out before.",
+"offset": Vector2(880, 1140),
 "options": {
 0: {
 "condition": {},
@@ -72,8 +172,23 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(360, 259.99982),
+"size": Vector2(379.99976, 279.99988),
 "speaker": 1
+},
+&"3_1": {
+"link": &"1_1",
+"offset": Vector2(1920, 200),
+"signalValue": "ReduceStar"
+},
+&"3_2": {
+"link": "END",
+"offset": Vector2(1860, 560),
+"signalValue": "Show"
+},
+&"3_3": {
+"link": "END",
+"offset": Vector2(800, 1740),
+"signalValue": "ReduceStar"
 }
 }
 characters = "res://GameCharacters.tres"
