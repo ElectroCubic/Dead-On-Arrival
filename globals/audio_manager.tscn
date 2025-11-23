@@ -11,6 +11,8 @@
 
 [node name="AudioManager" type="Node"]
 script = ExtResource("1_exsf0")
+music_fade_in_time = 0.5
+music_fade_out_time = 0.5
 
 [node name="BGMPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_dd2wf")

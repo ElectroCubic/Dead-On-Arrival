@@ -64,8 +64,9 @@ columns = 2
 
 [node name="MusicText" type="Label" parent="MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("2_ia3pt")
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 40
 text = "MUSIC"
 
 [node name="MusicSlider" type="HSlider" parent="MarginContainer/VBoxContainer/GridContainer"]
@@ -84,8 +85,9 @@ tick_count = 21
 
 [node name="SFXText" type="Label" parent="MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("2_ia3pt")
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 40
 text = "SFX"
 
 [node name="SFXSlider" type="HSlider" parent="MarginContainer/VBoxContainer/GridContainer"]
@@ -117,14 +119,15 @@ grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_colors/font_hover_color = Color(1, 0.916077, 0.0234375, 1)
+theme_override_colors/font_hover_color = Color(1, 0.91764706, 0.023529412, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("2_ia3pt")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_iisrt")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_iisrt")
 theme_override_styles/hover = SubResource("StyleBoxFlat_iisrt")
 theme_override_styles/focus = SubResource("StyleBoxFlat_iisrt")
-text = "BACK TO MENU"
+text = "Back to Menu"
 flat = true
 
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/GridContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b8ptnvwwu5a84"]
+[gd_scene load_steps=13 format=3 uid="uid://b8ptnvwwu5a84"]
 
 [ext_resource type="FontFile" uid="uid://yhhpudnvmaps" path="res://resources/fonts/SpecialElite-Regular.ttf" id="1_1n1m7"]
 [ext_resource type="Script" uid="uid://qltsa1suxn48" path="res://scenes/lose_screen.gd" id="1_73mov"]
@@ -6,7 +6,33 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_lytqm"]
 font = ExtResource("1_1n1m7")
-font_size = 60
+font_size = 70
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_73mov"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lytqm"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v2sw8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0wxbn"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jylt6"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ivinc"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_06t62"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dqkiy"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="LoseScreen" type="Control"]
 layout_mode = 3
@@ -24,6 +50,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_lock_ = true
 
 [node name="LoseText" type="Label" parent="."]
 layout_mode = 1
@@ -43,29 +70,46 @@ vertical_alignment = 1
 [node name="Restart" type="Button" parent="."]
 layout_mode = 0
 offset_left = 599.0
-offset_top = 416.0
-offset_right = 787.0
-offset_bottom = 495.0
+offset_top = 464.0
+offset_right = 792.0
+offset_bottom = 543.0
+theme_override_colors/font_hover_color = Color(1, 0.91764706, 0.023529412, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("1_1n1m7")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_73mov")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lytqm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_v2sw8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_0wxbn")
 text = "Restart"
+flat = true
 
 [node name="QuitBtn" type="Button" parent="."]
 layout_mode = 0
 offset_left = 380.0
-offset_top = 415.0
+offset_top = 463.0
 offset_right = 568.0
-offset_bottom = 494.0
+offset_bottom = 542.0
+theme_override_colors/font_hover_color = Color(1, 0.91764706, 0.023529412, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("1_1n1m7")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_jylt6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ivinc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_06t62")
+theme_override_styles/focus = SubResource("StyleBoxFlat_dqkiy")
 text = "Quit"
+flat = true
 
 [node name="IconSmallBlankX" type="Sprite2D" parent="."]
 modulate = Color(0.98878354, 0, 0, 1)
-position = Vector2(579, 311)
+position = Vector2(579, 343)
+scale = Vector2(1.2, 1.2)
 texture = ExtResource("2_73mov")
 
 [connection signal="mouse_entered" from="Restart" to="." method="_on_restart_mouse_entered"]
+[connection signal="mouse_exited" from="Restart" to="." method="_on_restart_mouse_exited"]
 [connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
 [connection signal="mouse_entered" from="QuitBtn" to="." method="_on_quit_btn_mouse_entered"]
+[connection signal="mouse_exited" from="QuitBtn" to="." method="_on_quit_btn_mouse_exited"]
 [connection signal="pressed" from="QuitBtn" to="." method="_on_quit_btn_pressed"]

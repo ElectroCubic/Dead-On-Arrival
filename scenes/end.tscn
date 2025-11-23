@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://d11g52fr8bje6"]
+[gd_scene load_steps=14 format=3 uid="uid://d11g52fr8bje6"]
 
 [ext_resource type="Script" uid="uid://cfjm5u4gexamf" path="res://scenes/end.gd" id="1_3d26k"]
 [ext_resource type="FontFile" uid="uid://yhhpudnvmaps" path="res://resources/fonts/SpecialElite-Regular.ttf" id="1_mwn6m"]
@@ -6,12 +6,40 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_3d26k"]
 font = ExtResource("1_mwn6m")
-font_size = 60
+font_size = 80
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_p7m4f"]
 font = ExtResource("1_mwn6m")
-font_size = 30
+font_size = 40
 font_color = Color(1, 0.26324546, 0.26324546, 1)
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p7m4f"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bvfni"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s4tl2"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8hmjt"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o5lv4"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ee763"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nl5ow"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ovs12"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="End" type="Control"]
 layout_mode = 3
@@ -29,6 +57,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_lock_ = true
 
 [node name="WinText" type="Label" parent="."]
 layout_mode = 1
@@ -61,31 +90,62 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="QuitBtn" type="Button" parent="."]
-layout_mode = 0
-offset_left = 380.0
-offset_top = 455.0
-offset_right = 568.0
-offset_bottom = 534.0
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -230.0
+offset_top = -167.0
+offset_right = -42.0
+offset_bottom = -88.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_hover_color = Color(1, 0.91764706, 0.023529412, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("1_mwn6m")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_p7m4f")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bvfni")
+theme_override_styles/hover = SubResource("StyleBoxFlat_s4tl2")
+theme_override_styles/focus = SubResource("StyleBoxFlat_8hmjt")
 text = "Quit"
+flat = true
 
 [node name="MainMenuBtn" type="Button" parent="."]
-layout_mode = 0
-offset_left = 604.0
-offset_top = 455.0
-offset_right = 792.0
-offset_bottom = 534.0
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 4.5
+offset_top = -167.0
+offset_right = 267.5
+offset_bottom = -88.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_hover_color = Color(1, 0.91764706, 0.023529412, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("1_mwn6m")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_o5lv4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ee763")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nl5ow")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ovs12")
 text = "Main Menu"
+flat = true
 
 [node name="IconSmallBlankCheck" type="Sprite2D" parent="."]
 modulate = Color(0.13439219, 0.92768556, 0.31132162, 1)
-position = Vector2(584, 348)
+position = Vector2(584, 364)
+scale = Vector2(1.2, 1.2)
 texture = ExtResource("3_p7m4f")
 
 [connection signal="mouse_entered" from="QuitBtn" to="." method="_on_quit_btn_mouse_entered"]
+[connection signal="mouse_exited" from="QuitBtn" to="." method="_on_quit_btn_mouse_exited"]
 [connection signal="pressed" from="QuitBtn" to="." method="_on_quit_btn_pressed"]
 [connection signal="mouse_entered" from="MainMenuBtn" to="." method="_on_main_menu_btn_mouse_entered"]
+[connection signal="mouse_exited" from="MainMenuBtn" to="." method="_on_main_menu_btn_mouse_exited"]
 [connection signal="pressed" from="MainMenuBtn" to="." method="_on_main_menu_btn_pressed"]

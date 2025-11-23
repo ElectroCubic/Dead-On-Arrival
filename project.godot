@@ -14,6 +14,9 @@ config/name="Dead On Arrival"
 config/version="1.0"
 run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.5", "GL Compatibility")
+boot_splash/bg_color=Color(0.06666667, 0.09411765, 0.33333334, 1)
+boot_splash/use_filter=false
+boot_splash/image="uid://nl6y6x57jbg1"
 config/icon="uid://dh1py4huc0l48"
 
 [autoload]
@@ -25,6 +28,7 @@ Globals="*res://globals/globals.gd"
 [display]
 
 window/size/mode=3
+window/size/resizable=false
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
@@ -53,6 +57,10 @@ ToggleCaselog={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194306,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }
+
+[internationalization]
+
+rendering/size/resizable=false
 
 [layer_names]
 

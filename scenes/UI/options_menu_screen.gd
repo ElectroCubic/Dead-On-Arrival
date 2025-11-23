@@ -20,19 +20,21 @@ func _on_back_pressed() -> void:
 	await get_tree().create_timer(0.5).timeout
 	hide()
 	mainUI.show()
-	
-
-func change_back_font_size(size: int) -> void:
-	backBtn.add_theme_font_size_override("font_size",size)
-
-func modify_back_btn_size(from_size: int, to_size: int, time_sec: float) -> void:
-	var tween = get_tree().create_tween().set_trans(Tween.TRANS_SINE)
-	tween.tween_method(change_back_font_size,from_size,to_size,time_sec)
+	main.display_title_effect(main.title_text, 3.0)
 
 func _on_back_mouse_entered() -> void:
 	AudioManager.rollover_sfx.play()
-	modify_back_btn_size(main.normal_btn_font_size2,main.expand_btn_font_size2,main.move_time_sec)
+	main.modify_btn_size(
+		backBtn,
+		main.normal_btn_font_size2,
+		main.expand_btn_font_size2,
+		main.move_time_sec
+	)
 
 func _on_back_mouse_exited() -> void:
-	modify_back_btn_size(main.expand_btn_font_size2,main.normal_btn_font_size2,main.move_time_sec)
- 
+	main.modify_btn_size(
+		backBtn, 
+		main.expand_btn_font_size2,
+		main.normal_btn_font_size2,
+		main.move_time_sec
+	)

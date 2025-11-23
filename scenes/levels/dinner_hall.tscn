@@ -20,6 +20,7 @@ scale = Vector2(0.211992, 0.23025)
 texture = ExtResource("2_uo5gd")
 
 [node name="DialogueBox" parent="." index="1"]
+visible = false
 data = ExtResource("3_m428f")
 start_id = "DINNER"
 
@@ -29,7 +30,7 @@ scale = Vector2(1.0322014, 0.40447247)
 item_name = "Stained Gloves"
 item_icon = ExtResource("6_x175j")
 item_info = "The gloves seems to be covered with some kind of plant-extract, probably from the garden"
-item_id = "4"
+item_id = "5"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Items/Stained Gloves" index="1"]
 position = Vector2(49.253006, 50.621887)

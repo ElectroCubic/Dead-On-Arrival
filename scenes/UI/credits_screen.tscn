@@ -1,0 +1,188 @@
+[gd_scene load_steps=4 format=3 uid="uid://t41xuefc5dyi"]
+
+[ext_resource type="Script" uid="uid://1i0ytxb05gis" path="res://scenes/UI/credits_screen.gd" id="1_0ni51"]
+[ext_resource type="FontFile" uid="uid://yhhpudnvmaps" path="res://resources/fonts/SpecialElite-Regular.ttf" id="1_ojcan"]
+[ext_resource type="Texture2D" uid="uid://bjjt2tssl26gn" path="res://graphics/UI/Icons/Icon_Small_Blank_X.svg" id="3_mnme1"]
+
+[node name="CreditsScreen" type="CanvasLayer"]
+script = ExtResource("1_0ni51")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CreditsTitle" type="RichTextLabel" parent="."]
+clip_contents = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -132.0
+offset_top = 56.0
+offset_right = 132.0
+offset_bottom = 117.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.98878354, 0.058707595, 0.058707595, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/normal_font = ExtResource("1_ojcan")
+theme_override_font_sizes/normal_font_size = 60
+text = "CREDITS"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -574.0
+offset_top = -155.0
+offset_right = 574.0
+offset_bottom = 251.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 18
+
+[node name="Programming" type="RichTextLabel" parent="VBoxContainer"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.24063486, 0.8620773, 0.9141083, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/normal_font = ExtResource("1_ojcan")
+theme_override_font_sizes/normal_font_size = 40
+text = "Game Programming by"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Anush Bundel" type="RichTextLabel" parent="VBoxContainer"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/outline_size = 10
+theme_override_fonts/normal_font = ExtResource("1_ojcan")
+theme_override_font_sizes/normal_font_size = 28
+text = "Anush Bundel (aka ElectroCubic)"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Story Writing" type="RichTextLabel" parent="VBoxContainer"]
+clip_contents = false
+layout_mode = 2
+theme_override_colors/default_color = Color(0.37441814, 0.85979897, 0.32811883, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/normal_font = ExtResource("1_ojcan")
+theme_override_font_sizes/normal_font_size = 40
+text = "Story and Dialogue Writing by"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Venkatesh and Manideep" type="RichTextLabel" parent="VBoxContainer"]
+clip_contents = false
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/normal_font = ExtResource("1_ojcan")
+theme_override_font_sizes/normal_font_size = 28
+text = "Venkatesh and Manideep"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Gameplay and Art Design" type="RichTextLabel" parent="VBoxContainer"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.9955722, 0.2882695, 0.8410052, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/normal_font = ExtResource("1_ojcan")
+theme_override_font_sizes/normal_font_size = 40
+text = "Gameplay, Art and Sound Design by"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Anushka and Atulya" type="RichTextLabel" parent="VBoxContainer"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/outline_size = 10
+theme_override_fonts/normal_font = ExtResource("1_ojcan")
+theme_override_font_sizes/normal_font_size = 28
+bbcode_enabled = true
+text = "Anushka Kapur [br]Atulya Raghuvanshi"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Special Thanks" type="RichTextLabel" parent="VBoxContainer"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.95484024, 0.8772593, 0.38950685, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/normal_font = ExtResource("1_ojcan")
+theme_override_font_sizes/normal_font_size = 40
+text = "Special Thanks to"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Anushka\'s brother for the character art" type="RichTextLabel" parent="VBoxContainer"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/outline_size = 10
+theme_override_fonts/normal_font = ExtResource("1_ojcan")
+theme_override_font_sizes/normal_font_size = 28
+text = "Saurav Kapur for the Character Art"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Thanks" type="RichTextLabel" parent="VBoxContainer"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.9412629, 0.11159822, 0.11159822, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/normal_font = ExtResource("1_ojcan")
+theme_override_font_sizes/normal_font_size = 28
+text = "Thanks for playing the Game! :)"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackBtn" type="TextureButton" parent="."]
+modulate = Color(1, 0, 0, 1)
+custom_minimum_size = Vector2(50, 50)
+offset_left = 56.0
+offset_top = 40.0
+offset_right = 124.462585
+offset_bottom = 108.0
+texture_normal = ExtResource("3_mnme1")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="mouse_entered" from="BackBtn" to="." method="_on_back_btn_mouse_entered"]
+[connection signal="mouse_exited" from="BackBtn" to="." method="_on_back_btn_mouse_exited"]
+[connection signal="pressed" from="BackBtn" to="." method="_on_back_btn_pressed"]
