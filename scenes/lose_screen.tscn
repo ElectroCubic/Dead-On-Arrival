@@ -65,5 +65,7 @@ modulate = Color(0.98878354, 0, 0, 1)
 position = Vector2(579, 311)
 texture = ExtResource("2_73mov")
 
+[connection signal="mouse_entered" from="Restart" to="." method="_on_restart_mouse_entered"]
 [connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
+[connection signal="mouse_entered" from="QuitBtn" to="." method="_on_quit_btn_mouse_entered"]
 [connection signal="pressed" from="QuitBtn" to="." method="_on_quit_btn_pressed"]

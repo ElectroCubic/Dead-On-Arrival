@@ -3,7 +3,6 @@ extends Control
 @onready var h_box_container: HBoxContainer = $HBoxContainer
 @onready var blank := preload("res://graphics/UI/Icons/Icon_Large_StarGrey.svg")
 
-
 func _ready() -> void:
 	Globals.connect("stat_change", update_stats)
 

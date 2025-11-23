@@ -3,23 +3,30 @@ class_name Level
 
 signal show_arrows
 
+var game_over: bool = false
 var question_id: String = ""
-@onready var interrogation_data_e := preload("res://EleanorInterrogation.tres")
-@onready var interrogation_data_l := preload("res://LillianInterrogation.tres")
+@onready var interrogation_data_e := preload("res://resources/EleanorInterrogation.tres")
+@onready var interrogation_data_l := preload("res://resources/LillianInterrogation.tres")
 @onready var case_log_ui := $CaseLogUI
 @onready var inventory_ui := $InventoryUI
 @onready var dialogue_box: DialogueBox = $DialogueBox
 @onready var lillian_btn: Button = $InterrogateBtn/LillianBtn
 @onready var eleanor_btn: Button = $InterrogateBtn/EleanorBtn
-
+@onready var bg2 := preload("res://audio/stalking-my-next-victim-cinematic-true-crime-and-detective-music-198242.mp3")
 
 func _ready() -> void:
+	if AudioManager.bgm_player.stream != bg2:
+		AudioManager.change_bgm(bg2)
+	
+	if not AudioManager.bgm_player.playing:
+		AudioManager.bgm_player.play()
+		AudioManager.fade_in_music()
+
 	inventory_ui.connect("show_item", _on_show_item)
 	dialogue_box.connect("dialogue_processed", on_dialogue_processed)
 	dialogue_box.connect("dialogue_started", _on_dialogue_box_dialogue_started)
 	dialogue_box.connect("dialogue_ended", _on_dialogue_box_dialogue_ended)
 	dialogue_box.connect("dialogue_signal", _on_dialogue_signal_received)
-
 	
 	for item in $Items.get_children():
 		item.connect("item_collected", _on_item_collected)
@@ -32,28 +39,44 @@ func _ready() -> void:
 	else:
 		dialogue_box.stop()
 
+func _process(_delta: float) -> void:
+	check_ending()
+
+func check_ending():
+	if Globals.winConditionOne and Globals.winConditionTwo and not game_over:
+		dialogue_box.data = interrogation_data_e
+		dialogue_box.start_id = interrogation_data_e.starts.keys()[5]  # END
+		if not dialogue_box.is_running():
+			dialogue_box.start()
 
 func _on_dialogue_signal_received(value: String):
-	if value == "DinnerHall":
-		TransitionLayer.change_scene("res://scenes/levels/dinner_hall.tscn")
-	elif value == "Study":
-		TransitionLayer.change_scene("res://scenes/levels/study.tscn")
-	elif value == "Start_Investigation":
-		Globals.investigation = true
-		$InterrogateBtn.show()
-		$StarLevel.show()
-		show_arrows.emit()
-	elif value == "ReduceStar":
-		Globals.star_level -= 1
-		if Globals.star_level <= 0:
-			TransitionLayer.change_scene("res://scenes/lose_screen.tscn")
-	
-	elif value == "Show":
-		question_id = "ShowHankie"
-	elif value == "ShowPapers":
-		question_id = value
-	elif value == "ShowGloves":
-		question_id = value
+	match value:
+		"DinnerHall":
+			TransitionLayer.change_scene("res://scenes/levels/dinner_hall.tscn")
+		"Study":
+			TransitionLayer.change_scene("res://scenes/levels/study.tscn")
+		"Start_Investigation":
+			Globals.investigation = true
+			$InterrogateBtn.show()
+			$StarLevel.show()
+			show_arrows.emit()
+		"ReduceStar":
+			Globals.star_level -= 1
+			if Globals.star_level <= 0:
+				dialogue_box.stop()
+				TransitionLayer.change_scene("res://scenes/lose_screen.tscn")
+		"GotClue1":
+			Globals.winConditionOne = true
+		"GotClue2":
+			Globals.winConditionTwo = true
+		"END":
+			game_over = true
+			dialogue_box.stop()
+			TransitionLayer.change_scene("res://scenes/end.tscn")
+		"ShowPapers", "ShowGloves", "ShowHankie":
+			question_id = value
+		_:
+			pass
 	
 func on_dialogue_processed(speaker: Variant, dialogue: String, _options: Array[String]) -> void:
 	var sprite_node = dialogue_box.get_child(1)
@@ -63,7 +86,6 @@ func on_dialogue_processed(speaker: Variant, dialogue: String, _options: Array[S
 	dialogue = regex.sub(dialogue, "", true).strip_edges()
 	if speaker.name != "Detective":
 		case_log_ui.add_entry(speaker.name + ": " + dialogue)
-	
 
 func _on_item_collected(item_data):
 	inventory_ui.add_item(item_data)
@@ -82,14 +104,34 @@ func _on_interrogate_btn_pressed() -> void:
 		
 func _on_show_item(item):
 	dialogue_box.stop()
-	if item.name == "Handkerchief" and question_id == "ShowHankie":
-		dialogue_box.start_id = interrogation_data_l.starts.keys()[2]  # YES
-	else:
-		dialogue_box.start_id = interrogation_data_l.starts.keys()[1]  # NO
+
+	match question_id:
+		"ShowHankie":
+			dialogue_box.data = interrogation_data_l
+			if item["name"] == "Handkerchief":
+				dialogue_box.start_id = interrogation_data_l.starts.keys()[2]  # YES
+			else:
+				dialogue_box.start_id = interrogation_data_l.starts.keys()[1]  # NO
+
+		"ShowPapers":
+			dialogue_box.data = interrogation_data_e
+			if item["name"] == "Burnt Papers":
+				dialogue_box.start_id = interrogation_data_e.starts.keys()[4]  # YES
+			else:
+				dialogue_box.start_id = interrogation_data_e.starts.keys()[2]  # NO
+
+		"ShowGloves":
+			dialogue_box.data = interrogation_data_e
+			if item["name"] == "Stained Gloves":
+				dialogue_box.start_id = interrogation_data_e.starts.keys()[3]  # YES
+			else:
+				dialogue_box.start_id = interrogation_data_e.starts.keys()[1]  # NO
+
+		_:
+			return
 
 	if not dialogue_box.is_running():
-		dialogue_box.start()	
-	
+		dialogue_box.start()
 
 func _on_lillian_btn_pressed() -> void:
 	dialogue_box.data = interrogation_data_l
@@ -98,7 +140,6 @@ func _on_lillian_btn_pressed() -> void:
 		dialogue_box.start()
 	else:
 		dialogue_box.stop()
-
 
 func _on_eleanor_btn_pressed() -> void:
 	dialogue_box.data = interrogation_data_e

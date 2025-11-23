@@ -1,12 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bu60p87wsanon"]
+[gd_scene load_steps=5 format=3 uid="uid://bu60p87wsanon"]
 
 [ext_resource type="Script" uid="uid://bari1f60v1ngn" path="res://scenes/main.gd" id="1_luvgp"]
 [ext_resource type="FontFile" uid="uid://yhhpudnvmaps" path="res://resources/fonts/SpecialElite-Regular.ttf" id="2_bhm08"]
 [ext_resource type="Texture2D" uid="uid://b1m6vu8pat2ff" path="res://graphics/backgrounds/main bg.jpg" id="2_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://b2xj18tdq55m0" path="res://scenes/UI/options_menu_screen.tscn" id="3_sugp2"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tbgi4"]
-bg_color = Color(0.21, 0.21, 0.21, 0.7019608)
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_luvgp")
@@ -18,16 +15,17 @@ texture = ExtResource("2_jyhfs")
 
 [node name="MainUI" type="CanvasLayer" parent="."]
 
-[node name="Title" type="Label" parent="MainUI"]
-offset_left = 243.0
-offset_top = 79.0
-offset_right = 907.0
-offset_bottom = 190.0
-theme_override_colors/font_color = Color(0.86658764, 0.17683315, 0.17683315, 1)
-theme_override_fonts/font = ExtResource("2_bhm08")
-theme_override_font_sizes/font_size = 80
-theme_override_styles/normal = SubResource("StyleBoxFlat_tbgi4")
+[node name="RichTextLabel" type="RichTextLabel" parent="MainUI"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 120.0
+offset_bottom = 189.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(0.98878354, 0.058707595, 0.058707595, 1)
+theme_override_fonts/normal_font = ExtResource("2_bhm08")
+theme_override_font_sizes/normal_font_size = 80
 text = "DEAD ON ARRIVAL"
+scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -61,6 +59,9 @@ text = "Quit"
 [node name="OptionsMenuScreen" parent="." instance=ExtResource("3_sugp2")]
 visible = false
 
+[connection signal="mouse_entered" from="MainUI/PlayBtn" to="." method="_on_play_btn_mouse_entered"]
 [connection signal="pressed" from="MainUI/PlayBtn" to="." method="_on_play_btn_pressed"]
+[connection signal="mouse_entered" from="MainUI/OptionsBtn" to="." method="_on_options_btn_mouse_entered"]
 [connection signal="pressed" from="MainUI/OptionsBtn" to="." method="_on_options_btn_pressed"]
+[connection signal="mouse_entered" from="MainUI/QuitBtn" to="." method="_on_quit_btn_mouse_entered"]
 [connection signal="pressed" from="MainUI/QuitBtn" to="." method="_on_quit_btn_pressed"]

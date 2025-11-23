@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c15yqkryj3lhd" path="res://scenes/levels/level.tscn" id="1_x3bar"]
 [ext_resource type="Script" uid="uid://dscllwciokinx" path="res://scenes/levels/study.gd" id="2_m1lvq"]
 [ext_resource type="Texture2D" uid="uid://6qoxmto6xrwc" path="res://graphics/backgrounds/Group 2.png" id="3_d0r5w"]
-[ext_resource type="Resource" uid="uid://dtivp056m5sbj" path="res://BlackwoodIntro.tres" id="4_abu8i"]
+[ext_resource type="Resource" uid="uid://dtivp056m5sbj" path="res://resources/BlackwoodIntro.tres" id="4_abu8i"]
 [ext_resource type="PackedScene" uid="uid://c5lt4q8eaqj4q" path="res://scenes/item.tscn" id="5_uj7x3"]
 [ext_resource type="Texture2D" uid="uid://bab2fnnwllxar" path="res://graphics/characters/Dead_old_man-removebg-preview.svg" id="5_yot07"]
 [ext_resource type="Texture2D" uid="uid://dhsrk4mpx5xvo" path="res://graphics/objects/clues/burned_paper-removebg-preview.png" id="6_txdcf"]
@@ -46,6 +46,7 @@ item_id = "1"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Items/Burnt Papers" index="1"]
 position = Vector2(51, 55.5)
 shape = SubResource("RectangleShape2D_txdcf")
+metadata/_edit_lock_ = true
 
 [node name="Puzzle Box" parent="Items" index="1" instance=ExtResource("5_uj7x3")]
 position = Vector2(339, 361)
@@ -57,6 +58,7 @@ item_id = "2"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Items/Puzzle Box" index="1"]
 position = Vector2(51, 54)
 shape = SubResource("RectangleShape2D_d51pg")
+metadata/_edit_lock_ = true
 
 [node name="Unsigned Will" parent="Items" index="2" instance=ExtResource("5_uj7x3")]
 position = Vector2(1, 602)
@@ -69,9 +71,10 @@ item_id = "3"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Items/Unsigned Will" index="1"]
 position = Vector2(50, 49)
 shape = SubResource("RectangleShape2D_n6ocm")
+metadata/_edit_lock_ = true
 
 [node name="Hankie" parent="Items" index="3" instance=ExtResource("5_uj7x3")]
-position = Vector2(1009, 446.00003)
+position = Vector2(1009, 448)
 scale = Vector2(1, 0.19999997)
 item_name = "Handkerchief"
 item_icon = ExtResource("9_2py5k")
@@ -81,6 +84,7 @@ item_info = "A rather clean hankie founc near the window table, it has a name em
 position = Vector2(46.49994, 37.50049)
 scale = Vector2(0.99999976, 0.9999998)
 shape = SubResource("RectangleShape2D_l0mfc")
+metadata/_edit_lock_ = true
 
 [node name="DeadOldMan" type="Sprite2D" parent="." index="5"]
 position = Vector2(543, 535)

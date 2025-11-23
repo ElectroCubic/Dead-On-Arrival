@@ -21,10 +21,11 @@ var clicks: int = 0
 func _ready():
 	input_pickable = true
 	texture_rect.texture = item_icon
-
-	if item_id != "" and Globals.has_item_id(item_id):
-		queue_free()
-		return
+	
+	if not Engine.is_editor_hint():
+		if item_id != "" and Globals.has_item_id(item_id):
+			queue_free()
+			return
 
 func _input_event(_viewport, event, _shape_idx):
 	if Globals.is_dialogue_playing:
@@ -41,7 +42,8 @@ func _input_event(_viewport, event, _shape_idx):
 			}
 
 			item_collected.emit(data)
+			AudioManager.clue_found.play()
 			if item_id != "":
 				Globals.mark_item_collected(item_id)
-
+			
 			queue_free()

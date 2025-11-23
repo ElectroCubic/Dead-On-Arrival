@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c15yqkryj3lhd" path="res://scenes/levels/level.tscn" id="1_46vgp"]
 [ext_resource type="Script" uid="uid://cmw5jxbothir" path="res://scenes/levels/dinner_hall.gd" id="2_m428f"]
 [ext_resource type="Texture2D" uid="uid://dle8fngheefk1" path="res://graphics/backgrounds/3519577_2354.jpg" id="2_uo5gd"]
-[ext_resource type="Resource" uid="uid://dtivp056m5sbj" path="res://BlackwoodIntro.tres" id="3_m428f"]
+[ext_resource type="Resource" uid="uid://dtivp056m5sbj" path="res://resources/BlackwoodIntro.tres" id="3_m428f"]
 [ext_resource type="PackedScene" uid="uid://bh7rkcb0te8ot" path="res://scenes/arrow.tscn" id="5_hl7ab"]
 [ext_resource type="PackedScene" uid="uid://c5lt4q8eaqj4q" path="res://scenes/item.tscn" id="5_r6g7b"]
 [ext_resource type="Texture2D" uid="uid://cylhv4ir1vprc" path="res://graphics/objects/clues/gardening_gloves.png" id="6_x175j"]

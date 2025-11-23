@@ -1,0 +1,434 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://b6swqhvn8cmkd"]
+
+[ext_resource type="Script" uid="uid://c2sr0dxa5ad11" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_02j0s"]
+
+[resource]
+script = ExtResource("1_02j0s")
+starts = {
+"Eleanor": &"0_1",
+"NO_gloves": &"0_5",
+"NO_paper": &"0_3",
+"YES_gloves": &"0_4",
+"YES_paper": &"0_2",
+"Z": &"0_6"
+}
+nodes = {
+&"0_1": {
+"link": &"1_1",
+"offset": Vector2(-540.23987, -117.33047),
+"start_id": "Eleanor"
+},
+&"0_2": {
+"link": &"1_12",
+"offset": Vector2(-1520, 400),
+"start_id": "YES_paper"
+},
+&"0_3": {
+"link": &"3_4",
+"offset": Vector2(-1520, 580),
+"start_id": "NO_paper"
+},
+&"0_4": {
+"link": &"1_15",
+"offset": Vector2(-1480, 940),
+"start_id": "YES_gloves"
+},
+&"0_5": {
+"link": &"3_4",
+"offset": Vector2(-1520, 740),
+"start_id": "NO_gloves"
+},
+&"0_6": {
+"link": &"1_17",
+"offset": Vector2(-780, 1440),
+"start_id": "Z"
+},
+&"1_1": {
+"dialogue": "What do you want to know?",
+"offset": Vector2(-240, -120),
+"options": {
+0: {
+"condition": {},
+"link": &"1_3",
+"text": "How was your relationship with your Father?"
+},
+1: {
+"condition": {},
+"link": &"1_7",
+"text": "Where were you before I came to the Manor?"
+},
+2: {
+"condition": {},
+"link": &"1_2",
+"text": "We'll talk later..."
+}
+},
+"size": Vector2(399.99927, 343.00024),
+"speaker": 2
+},
+&"1_10": {
+"dialogue": "My my, you're onto me, well go ahead, what do you think I was doing?",
+"offset": Vector2(1620, 540),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300.0006, 279.99976),
+"speaker": 2
+},
+&"1_11": {
+"dialogue": "Assume what you must, I don't like how you're going about this.",
+"offset": Vector2(1415.7825, 160.83109),
+"options": {
+0: {
+"condition": {},
+"link": &"3_1",
+"text": "Ok..."
+}
+},
+"size": Vector2(320, 280),
+"speaker": 2
+},
+&"1_12": {
+"dialogue": "Huh? Well, you got me there, yes I did enter his room, but that still doesn't explain how he died. ",
+"offset": Vector2(-1240, 220),
+"options": {
+0: {
+"condition": {},
+"link": &"1_14",
+"text": ""
+}
+},
+"size": Vector2(339.9995, 280.00024),
+"speaker": 2
+},
+&"1_13": {
+"dialogue": "Ha! Nice try, but it ain't easy to accuse somebody like me! ",
+"offset": Vector2(-1040, 540),
+"options": {
+0: {
+"condition": {},
+"link": &"1_1",
+"text": "Uh oh..."
+}
+},
+"size": Vector2(300, 273),
+"speaker": 2
+},
+&"1_14": {
+"dialogue": "I was there to help him, I wouldn't even think to do any harm!",
+"offset": Vector2(-820, 240),
+"options": {
+0: {
+"condition": {},
+"link": &"3_5",
+"text": "Interesting..."
+}
+},
+"size": Vector2(300.00024, 279.9995),
+"speaker": 2
+},
+&"1_15": {
+"dialogue": "Oh, what is this? Why are you holding these dirty gloves? ",
+"offset": Vector2(-1160, 860),
+"options": {
+0: {
+"condition": {},
+"link": &"1_23",
+"text": "I found them under the table"
+}
+},
+"size": Vector2(300, 279.99976),
+"speaker": 2
+},
+&"1_16": {
+"dialogue": "I got rid of him... and that was the only way I could have secured the company!",
+"offset": Vector2(-200, 1400),
+"options": {
+0: {
+"condition": {},
+"link": &"1_18",
+"text": "How did you kill him?"
+}
+},
+"size": Vector2(300, 319.99976),
+"speaker": 2
+},
+&"1_17": {
+"dialogue": "OK FINE! I admit it! I can't run away from this, can't I? ",
+"offset": Vector2(-560, 1320),
+"options": {
+0: {
+"condition": {},
+"link": &"1_16",
+"text": "What did you do?"
+}
+},
+"size": Vector2(319.99915, 319.99902),
+"speaker": 2
+},
+&"1_18": {
+"dialogue": "[wait speed=5] Its... poison. (regret) [/wait]",
+"offset": Vector2(140, 1300),
+"options": {
+0: {
+"condition": {},
+"link": &"1_19",
+"text": ""
+}
+},
+"size": Vector2(300.00122, 240.00043),
+"speaker": 2
+},
+&"1_19": {
+"dialogue": "A slow poison extracted from the plants in the garden...",
+"offset": Vector2(500, 1240),
+"options": {
+0: {
+"condition": {},
+"link": &"1_24",
+"text": ""
+}
+},
+"size": Vector2(300.00024, 240.00043),
+"speaker": 2
+},
+&"1_2": {
+"dialogue": "Let me know if you want to know anything else, I got all day.",
+"offset": Vector2(300, 480),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300.00085, 260.0005),
+"speaker": 2
+},
+&"1_20": {
+"dialogue": "I was treated a a child, even when I clearly knew what I as doing. [wait time=1] I guess my dad was right. I shouldn't have done it...",
+"offset": Vector2(1240, 1100),
+"options": {
+0: {
+"condition": {},
+"link": &"1_21",
+"text": "I am sorry, but I have to arrest you right now, this is a serious crime..."
+},
+1: {
+"condition": {},
+"link": &"1_22",
+"text": "Why did you do this?"
+}
+},
+"size": Vector2(419.9995, 339.9994),
+"speaker": 2
+},
+&"1_21": {
+"dialogue": "I know, I am really sorry, I don't know how am I possibly going to recover from this... (sobs)",
+"offset": Vector2(1720, 1040),
+"options": {
+0: {
+"condition": {},
+"link": &"3_8",
+"text": ""
+}
+},
+"size": Vector2(300.00073, 279.99976),
+"speaker": 2
+},
+&"1_22": {
+"dialogue": "I wanted to run the company by my rules, and dad wasn't really ready to give it to me, [wait time=1] instead he decided to give it to Lillian, so I had to do something... (sobs)",
+"offset": Vector2(1700, 1400),
+"options": {
+0: {
+"condition": {},
+"link": &"3_8",
+"text": ""
+}
+},
+"size": Vector2(319.99902, 320),
+"speaker": 2
+},
+&"1_23": {
+"dialogue": "Hey, where did you find that?? That's not something you should touch! [shake]It's dangerous! [/shake]",
+"offset": Vector2(-740, 820),
+"options": {
+0: {
+"condition": {},
+"link": &"3_6",
+"text": "Oh? You know this?"
+}
+},
+"size": Vector2(300, 320.00055),
+"speaker": 2
+},
+&"1_24": {
+"dialogue": "I put it on the puzzle box when I went there before, when my Father wasn't looking and distracted by the smoke I caused.",
+"offset": Vector2(840, 1120),
+"options": {
+0: {
+"condition": {},
+"link": &"1_20",
+"text": "Why?"
+}
+},
+"size": Vector2(300.0005, 299.99945),
+"speaker": 2
+},
+&"1_3": {
+"dialogue": "My father and I were close, we understood each other very well. [wait time=1] I am heartbroken to see him go like this...",
+"offset": Vector2(280, -440),
+"options": {
+0: {
+"condition": {},
+"link": &"1_5",
+"text": "Did you enter Alistair's room before the dinner?"
+},
+1: {
+"condition": {},
+"link": &"1_4",
+"text": "No you're not! I think you did it."
+}
+},
+"size": Vector2(399.99963, 320),
+"speaker": 2
+},
+&"1_4": {
+"dialogue": "Hey, don't go falsely accusing like that! Doesn't suit well for a reputed detective like you! Ha! ",
+"offset": Vector2(960, -200),
+"options": {
+0: {
+"condition": {},
+"link": &"3_1",
+"text": "Hmm... My bad."
+}
+},
+"size": Vector2(319.99915, 320),
+"speaker": 2
+},
+&"1_5": {
+"dialogue": "No I did not, I was in the dinner hall reading a book. I had no reason to go meet him.",
+"offset": Vector2(960, -560),
+"options": {
+0: {
+"condition": {},
+"link": &"3_2",
+"text": "I have evidence to prove you went in there!"
+},
+1: {
+"condition": {},
+"link": &"1_1",
+"text": "Ok... I can believe that."
+}
+},
+"size": Vector2(379.99976, 320),
+"speaker": 2
+},
+&"1_6": {
+"dialogue": "Oh, now we're talking, what exactly proves that I went there?",
+"offset": Vector2(1840, -540),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300.00024, 260),
+"speaker": 2
+},
+&"1_7": {
+"dialogue": "Let's see... I was first in the garden roaming about with my book and studying the plants, then I went inside beacause of the storm.",
+"offset": Vector2(300, 20),
+"options": {
+0: {
+"condition": {},
+"link": &"1_8",
+"text": "Ok... then?"
+},
+1: {
+"condition": {},
+"link": &"1_9",
+"text": "What were you doing in the Garden exactly?"
+}
+},
+"size": Vector2(379.9989, 308.00024),
+"speaker": 2
+},
+&"1_8": {
+"dialogue": "Then I was in the hall sitting with my book and helping out Lillian in making dinner.",
+"offset": Vector2(880, 140),
+"options": {
+0: {
+"condition": {},
+"link": &"1_1",
+"text": "Ok..."
+},
+1: {
+"condition": {},
+"link": &"1_11",
+"text": "Nope I won't fall for this! Are you trying to trick me?"
+}
+},
+"size": Vector2(420.00098, 308),
+"speaker": 2
+},
+&"1_9": {
+"dialogue": "Oh, I was studying the plants for my research on plant substances, how they react with human skin, all that, you won't understand.",
+"offset": Vector2(800, 440),
+"options": {
+0: {
+"condition": {},
+"link": &"1_1",
+"text": "Interesting..."
+},
+1: {
+"condition": {},
+"link": &"3_3",
+"text": "I have evidence you were doing something else as well"
+}
+},
+"size": Vector2(459.99927, 308),
+"speaker": 2
+},
+&"3_1": {
+"link": &"1_1",
+"offset": Vector2(1840, 20),
+"signalValue": "ReduceStar"
+},
+&"3_2": {
+"link": &"1_6",
+"offset": Vector2(1500, -440),
+"signalValue": "ShowPapers"
+},
+&"3_3": {
+"link": &"1_10",
+"offset": Vector2(1340, 740),
+"signalValue": "ShowGloves"
+},
+&"3_4": {
+"link": &"1_13",
+"offset": Vector2(-1280, 640),
+"signalValue": "ReduceStar"
+},
+&"3_5": {
+"link": "END",
+"offset": Vector2(-427.47845, 460.5593),
+"signalValue": "GotClue1"
+},
+&"3_6": {
+"link": "END",
+"offset": Vector2(-393.02975, 1043.2318),
+"signalValue": "GotClue2"
+},
+&"3_8": {
+"link": "END",
+"offset": Vector2(2140, 1360),
+"signalValue": "END"
+}
+}
+characters = "res://GameCharacters.tres"

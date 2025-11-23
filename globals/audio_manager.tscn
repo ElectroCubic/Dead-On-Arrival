@@ -1,16 +1,42 @@
-[gd_scene load_steps=2 format=3 uid="uid://0k7pq40ywdlm"]
+[gd_scene load_steps=8 format=3 uid="uid://0k7pq40ywdlm"]
 
 [ext_resource type="Script" uid="uid://c51oilp8cnsom" path="res://globals/AudioManager.gd" id="1_exsf0"]
+[ext_resource type="AudioStream" uid="uid://bnnj411joqaci" path="res://audio/ui-click-43196.mp3" id="2_3uslp"]
+[ext_resource type="AudioStream" uid="uid://xmtniyriykbs" path="res://audio/suspense-detective-horror-160021.mp3" id="2_dd2wf"]
+[ext_resource type="AudioStream" uid="uid://q5n3aukw43nl" path="res://audio/ui-sounds-pack-4-2-359741.mp3" id="3_dd2wf"]
+[ext_resource type="AudioStream" uid="uid://cjf4770b8d0nt" path="res://audio/energy-up-sound-effect-230472.mp3" id="5_4m8wf"]
+[ext_resource type="AudioStream" uid="uid://qo8h7cnv8fvu" path="res://audio/game-over-39-199830.mp3" id="6_8ak76"]
+[ext_resource type="AudioStream" uid="uid://dsk11gjhey06" path="res://audio/arcade-ui-2-229500.mp3" id="6_nvroi"]
 
 [node name="AudioManager" type="Node"]
 script = ExtResource("1_exsf0")
 
 [node name="BGMPlayer" type="AudioStreamPlayer" parent="."]
-autoplay = true
+stream = ExtResource("2_dd2wf")
 bus = &"Music"
 
 [node name="ClickSfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_3uslp")
+volume_db = 8.0
+pitch_scale = 1.23
 bus = &"SFX"
 
 [node name="RolloverSfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_dd2wf")
+volume_db = 3.0
+bus = &"SFX"
+
+[node name="ClueFound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_4m8wf")
+bus = &"SFX"
+
+[node name="WinSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_nvroi")
+volume_db = 1.0
+pitch_scale = 1.29
+bus = &"SFX"
+
+[node name="LoseSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_8ak76")
+pitch_scale = 0.79
 bus = &"SFX"

@@ -13,6 +13,10 @@ var investigation: bool = false
 var is_dialogue_playing: bool = false
 var inventory_items: Array = []
 var case_log_entries: Array = []
+var collected_item_ids: Array = []
+
+var winConditionOne: bool = false
+var winConditionTwo: bool = false
 
 func add_item(item_data: Dictionary):
 	if not inventory_items.has(item_data):
@@ -25,8 +29,9 @@ func add_log_entry(text: String):
 func clear_all():
 	inventory_items.clear()
 	case_log_entries.clear()
-	
-var collected_item_ids: Array = []
+
+func reset_items():
+	collected_item_ids.clear()
 
 func mark_item_collected(item_id: String):
 	if item_id not in collected_item_ids:

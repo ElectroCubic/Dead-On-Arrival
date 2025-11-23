@@ -7,7 +7,6 @@ signal show_item(item)
 var inventory_items: Array = []
 
 func _ready():
-	# Load previously saved data if any
 	inventory_items = Globals.inventory_items.duplicate(true)
 	_refresh_slots()
 	
@@ -22,8 +21,6 @@ func add_item(item_data):
 		inventory_items.append(item_data)
 		Globals.add_item(item_data)
 		_refresh_slots()
-	else:
-		print("Inventory full!")
 
 func _refresh_slots():
 	for i in range(slots.size()):
@@ -35,7 +32,7 @@ func _refresh_slots():
 			slots[i].disabled = true
 
 func _on_slot_pressed(slot):
-	if Globals.is_dialogue_playing:
+	if Globals.is_dialogue_playing and Globals.investigation:
 		var index = slots.find(slot)
 		if index >= 0 and index < Globals.inventory_items.size():
 			var item = Globals.inventory_items[index]

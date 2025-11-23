@@ -14,7 +14,7 @@ config/name="Dead On Arrival"
 config/version="1.0"
 run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.5", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://dh1py4huc0l48"
 
 [autoload]
 
@@ -24,6 +24,7 @@ Globals="*res://globals/globals.gd"
 
 [display]
 
+window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 

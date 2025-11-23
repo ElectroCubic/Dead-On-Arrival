@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://c15yqkryj3lhd" path="res://scenes/levels/level.tscn" id="1_3kqdl"]
 [ext_resource type="Script" uid="uid://cineyvdl6foh5" path="res://scenes/levels/intro.gd" id="2_gs2wg"]
-[ext_resource type="Texture2D" uid="uid://151u4x4h2ykx" path="res://bg1.tres" id="3_ty81x"]
-[ext_resource type="Resource" uid="uid://dtivp056m5sbj" path="res://BlackwoodIntro.tres" id="4_7i1al"]
+[ext_resource type="Texture2D" uid="uid://151u4x4h2ykx" path="res://resources/bg1.tres" id="3_ty81x"]
+[ext_resource type="Resource" uid="uid://dtivp056m5sbj" path="res://resources/BlackwoodIntro.tres" id="4_7i1al"]
 [ext_resource type="PackedScene" uid="uid://bh7rkcb0te8ot" path="res://scenes/arrow.tscn" id="7_7i1al"]
 
 [node name="Intro" instance=ExtResource("1_3kqdl")]

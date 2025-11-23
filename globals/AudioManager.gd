@@ -3,6 +3,9 @@ extends Node
 @onready var bgm_player: AudioStreamPlayer = $BGMPlayer
 @onready var click_sfx: AudioStreamPlayer = $ClickSfx
 @onready var rollover_sfx: AudioStreamPlayer = $RolloverSfx
+@onready var clue_found: AudioStreamPlayer = $ClueFound
+@onready var lose_sound: AudioStreamPlayer = $LoseSound
+@onready var win_sound: AudioStreamPlayer = $WinSound
 
 @onready var music_bus_id: int = AudioServer.get_bus_index("Music")
 @onready var sfx_bus_id: int = AudioServer.get_bus_index("SFX")

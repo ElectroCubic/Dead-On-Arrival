@@ -1,0 +1,194 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://cmewvyqhu1nf7"]
+
+[ext_resource type="Script" uid="uid://c2sr0dxa5ad11" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_8ogae"]
+
+[resource]
+script = ExtResource("1_8ogae")
+starts = {
+"Lillian": &"0_1",
+"NO": &"0_3",
+"YES": &"0_2"
+}
+nodes = {
+&"0_1": {
+"link": &"1_1",
+"offset": Vector2(0, 220),
+"start_id": "Lillian"
+},
+&"0_2": {
+"link": &"1_8",
+"offset": Vector2(-1000, 540),
+"start_id": "YES"
+},
+&"0_3": {
+"link": &"1_10",
+"offset": Vector2(-1000, 960),
+"start_id": "NO"
+},
+&"1_1": {
+"dialogue": "Hey, Detective, how can I help?",
+"offset": Vector2(260, 220),
+"options": {
+0: {
+"condition": {},
+"link": &"1_2",
+"text": "Was there any argument recently between you and Alistair?"
+},
+1: {
+"condition": {},
+"link": &"1_4",
+"text": "What were you doing before I came here?"
+},
+2: {
+"condition": {},
+"link": &"1_3",
+"text": "We'll talk later..."
+}
+},
+"size": Vector2(520.0002, 343.00003),
+"speaker": 1
+},
+&"1_10": {
+"dialogue": "No that doesn't prove anything! You're wrong!",
+"offset": Vector2(-700, 960),
+"options": {
+0: {
+"condition": {},
+"link": &"3_3",
+"text": "Ummm...."
+}
+},
+"size": Vector2(300, 279.99963),
+"speaker": 1
+},
+&"1_2": {
+"dialogue": "No, we didn't have any arguments, but I think Alistair was really upset with Eleanor with all the company stuff and I can't really remember why.",
+"offset": Vector2(940, -100),
+"options": {
+0: {
+"condition": {},
+"link": &"1_5",
+"text": "Tell me about Eleanor."
+},
+1: {
+"condition": {},
+"link": &"1_6",
+"text": "Hey tell me, why was he upset?"
+}
+},
+"size": Vector2(359.9992, 308),
+"speaker": 1
+},
+&"1_3": {
+"dialogue": "Ok, I'll be right here if you need something else!",
+"offset": Vector2(920, 740),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(339.99994, 259.9999),
+"speaker": 1
+},
+&"1_4": {
+"dialogue": "I was in the Garden, watering the plants, I didn't even enter the Study before you came!",
+"offset": Vector2(920, 340),
+"options": {
+0: {
+"condition": {},
+"link": &"3_2",
+"text": "I have evidence to show you were in the study before!"
+},
+1: {
+"condition": {},
+"link": &"1_1",
+"text": "Ok..."
+}
+},
+"size": Vector2(439.99994, 339.9998),
+"speaker": 1
+},
+&"1_5": {
+"dialogue": "Eleanor is a high achiever, she's almost too... [wait time=1] perfect sometimes. She's a book worm as well, obviously, and she loves to study those plants in the garden, she's done a whole degree in that stuff!",
+"offset": Vector2(1420, -300),
+"options": {
+0: {
+"condition": {},
+"link": &"1_1",
+"text": "Ok..."
+}
+},
+"size": Vector2(340.00098, 273),
+"speaker": 1
+},
+&"1_6": {
+"dialogue": "I said I dont know! Please stop asking about that!",
+"offset": Vector2(1420, 0),
+"options": {
+0: {
+"condition": {},
+"link": &"3_1",
+"text": "Ok..."
+}
+},
+"size": Vector2(340.00098, 299.99973),
+"speaker": 1
+},
+&"1_7": {
+"dialogue": "Ok, prove it!",
+"offset": Vector2(1740, 380),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(319.99976, 320.00027),
+"speaker": 1
+},
+&"1_8": {
+"dialogue": "Oh, heavens… I must have forgotten it in the rush. Everything happened so quickly, the smoke, the shouting, I didn’t even think to take it back. ",
+"offset": Vector2(-680, 540),
+"options": {
+0: {
+"condition": {},
+"link": &"1_9",
+"text": "What Happened?"
+}
+},
+"size": Vector2(340, 360.00003),
+"speaker": 1
+},
+&"1_9": {
+"dialogue": "There was a bit of an incident before, some smoke was in Alistair's room. I went there to help and I saw Eleanor coming out before.",
+"offset": Vector2(-220, 540),
+"options": {
+0: {
+"condition": {},
+"link": &"1_1",
+"text": ""
+}
+},
+"size": Vector2(379.99976, 279.9998),
+"speaker": 1
+},
+&"3_1": {
+"link": &"1_1",
+"offset": Vector2(1920, 200),
+"signalValue": "ReduceStar"
+},
+&"3_2": {
+"link": &"1_7",
+"offset": Vector2(1460, 460),
+"signalValue": "ShowHankie"
+},
+&"3_3": {
+"link": &"1_1",
+"offset": Vector2(-320, 1140),
+"signalValue": "ReduceStar"
+}
+}
+characters = "res://GameCharacters.tres"
