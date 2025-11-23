@@ -35,7 +35,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.0005, 380),
+"size": Vector2(300.0005, 379.99988),
 "speaker": 3
 },
 &"1_10": {
@@ -48,7 +48,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 360.00006),
+"size": Vector2(300, 360.00012),
 "speaker": 2
 },
 &"1_11": {
@@ -61,11 +61,11 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.00012, 300.0003),
+"size": Vector2(300.00006, 300.00024),
 "speaker": 3
 },
 &"1_12": {
-"dialogue": "Mr. Alistair? [wait time=1] Hello? It's me. Why is he not answering me??",
+"dialogue": "(knock knock) [wait time=1]Mr. Alistair? Hello? It's me. Why is he not answering me??",
 "offset": Vector2(-120, 140),
 "options": {
 0: {
@@ -74,7 +74,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(319.99976, 279.99988),
+"size": Vector2(319.99945, 279.99963),
 "speaker": 3
 },
 &"1_13": {
@@ -87,7 +87,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(319.99976, 300.0005),
+"size": Vector2(319.99927, 299.99976),
 "speaker": 3
 },
 &"1_14": {
@@ -100,7 +100,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(319.9995, 300.0005),
+"size": Vector2(319.99933, 299.99976),
 "speaker": 3
 },
 &"1_15": {
@@ -113,7 +113,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.00012, 300),
+"size": Vector2(300.00006, 299.99927),
 "speaker": 1
 },
 &"1_16": {
@@ -126,7 +126,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(360.00018, 319.99982),
+"size": Vector2(360.00018, 319.99927),
 "speaker": 2
 },
 &"1_17": {
@@ -135,11 +135,37 @@ nodes = {
 "options": {
 0: {
 "condition": {},
-"link": &"3_1",
+"link": &"1_19",
 "text": ""
 }
 },
-"size": Vector2(319.99988, 240.00014),
+"size": Vector2(319.99976, 279.9999),
+"speaker": 3
+},
+&"1_18": {
+"dialogue": "Ok, we'll wait for you. I'll make myself comfortable near the fireplace, it's stupidly [shake] cold [/shake] outside!",
+"offset": Vector2(2220, -880),
+"options": {
+0: {
+"condition": {},
+"link": &"3_2",
+"text": ""
+}
+},
+"size": Vector2(339.9995, 400),
+"speaker": 3
+},
+&"1_19": {
+"dialogue": "I should write this down in my Case Log. [wait time=1] I need to get to the bottom of this!",
+"offset": Vector2(2180, 120),
+"options": {
+0: {
+"condition": {},
+"link": &"1_20",
+"text": ""
+}
+},
+"size": Vector2(300.00024, 320.00012),
 "speaker": 3
 },
 &"1_2": {
@@ -152,8 +178,21 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(319.9995, 400.00012),
+"size": Vector2(319.9997, 400),
 "speaker": 0
+},
+&"1_20": {
+"dialogue": "(Press TAB to Toggle the Case Log to view past entries and clues. The entries are automatically added to the Case Log)",
+"offset": Vector2(2540, 120),
+"options": {
+0: {
+"condition": {},
+"link": &"3_1",
+"text": ""
+}
+},
+"size": Vector2(300, 320.00012),
+"speaker": 3
 },
 &"1_3": {
 "dialogue": "Darling, must everything be about your inventions? Let the detective rest, the dinner is ready. You can show us your puzzles later.",
@@ -165,7 +204,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(319.9994, 400.00085),
+"size": Vector2(319.9997, 400.00073),
 "speaker": 1
 },
 &"1_4": {
@@ -178,7 +217,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(320.00256, 400.00085),
+"size": Vector2(320.00262, 400.00073),
 "speaker": 2
 },
 &"1_5": {
@@ -187,11 +226,11 @@ nodes = {
 "options": {
 0: {
 "condition": {},
-"link": &"3_2",
+"link": &"1_18",
 "text": ""
 }
 },
-"size": Vector2(339.9995, 400.00085),
+"size": Vector2(339.99902, 400.00073),
 "speaker": 0
 },
 &"1_6": {
@@ -204,7 +243,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(320, 320.00024),
+"size": Vector2(319.99994, 320.00037),
 "speaker": 1
 },
 &"1_7": {
@@ -217,7 +256,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 320.00024),
+"size": Vector2(300, 320.00037),
 "speaker": 2
 },
 &"1_8": {
@@ -230,7 +269,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 320.00024),
+"size": Vector2(300.0003, 320.00037),
 "speaker": 1
 },
 &"1_9": {
@@ -243,17 +282,17 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.00024, 380),
+"size": Vector2(300.00006, 379.99988),
 "speaker": 1
 },
 &"3_1": {
 "link": "END",
-"offset": Vector2(2260, 300),
+"offset": Vector2(2960, 380),
 "signalValue": "Start_Investigation"
 },
 &"3_2": {
 "link": "END",
-"offset": Vector2(2260, -540),
+"offset": Vector2(2700, -580),
 "signalValue": "DinnerHall"
 },
 &"3_3": {

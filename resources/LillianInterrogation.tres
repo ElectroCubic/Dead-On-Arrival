@@ -45,7 +45,7 @@ nodes = {
 "text": "We'll talk later..."
 }
 },
-"size": Vector2(520.0002, 343.00003),
+"size": Vector2(520.0001, 343),
 "speaker": 1
 },
 &"1_10": {
@@ -58,7 +58,7 @@ nodes = {
 "text": "Ummm...."
 }
 },
-"size": Vector2(300, 279.99963),
+"size": Vector2(300, 279.99976),
 "speaker": 1
 },
 &"1_2": {
@@ -76,7 +76,7 @@ nodes = {
 "text": "Hey tell me, why was he upset?"
 }
 },
-"size": Vector2(359.9992, 308),
+"size": Vector2(359.99915, 308),
 "speaker": 1
 },
 &"1_3": {
@@ -89,7 +89,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(339.99994, 259.9999),
+"size": Vector2(339.99994, 259.99982),
 "speaker": 1
 },
 &"1_4": {
@@ -120,7 +120,7 @@ nodes = {
 "text": "Ok..."
 }
 },
-"size": Vector2(340.00098, 273),
+"size": Vector2(340.00104, 273),
 "speaker": 1
 },
 &"1_6": {
@@ -133,11 +133,11 @@ nodes = {
 "text": "Ok..."
 }
 },
-"size": Vector2(340.00098, 299.99973),
+"size": Vector2(340.00104, 299.99976),
 "speaker": 1
 },
 &"1_7": {
-"dialogue": "Ok, prove it!",
+"dialogue": "Ok, prove it! (Click on an Inventory Item to Present Evidence!) ",
 "offset": Vector2(1740, 380),
 "options": {
 0: {
@@ -146,7 +146,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(319.99976, 320.00027),
+"size": Vector2(319.99982, 320.0002),
 "speaker": 1
 },
 &"1_8": {
@@ -159,7 +159,7 @@ nodes = {
 "text": "What Happened?"
 }
 },
-"size": Vector2(340, 360.00003),
+"size": Vector2(340, 360.00006),
 "speaker": 1
 },
 &"1_9": {
@@ -172,7 +172,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(379.99976, 279.9998),
+"size": Vector2(379.99976, 279.99982),
 "speaker": 1
 },
 &"3_1": {

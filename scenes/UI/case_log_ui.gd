@@ -7,7 +7,6 @@ class_name CaseLog
 
 func _ready():
 	visible = false
-	# Rebuild entries if switching back to this scene
 	for text in Globals.case_log_entries:
 		_add_label(text)
 

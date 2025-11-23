@@ -33,7 +33,7 @@ func _refresh_slots():
 
 func _on_slot_pressed(slot):
 	if Globals.is_dialogue_playing and Globals.investigation:
-		var index = slots.find(slot)
+		var index := slots.find(slot)
 		if index >= 0 and index < Globals.inventory_items.size():
 			var item = Globals.inventory_items[index]
 			show_item.emit(item)

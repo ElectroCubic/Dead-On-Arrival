@@ -37,7 +37,6 @@ position = Vector2(574.9999, 217.49997)
 scale = Vector2(2.1054542, 2.1725001)
 
 [node name="DialogueBox" type="Panel" parent="."]
-visible = false
 z_index = 10
 offset_left = 76.0
 offset_top = 376.0
@@ -217,8 +216,9 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 4.0
-offset_right = -4.0
+offset_left = 5.0
+offset_top = 3.0
+offset_right = -6.0
 offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -233,15 +233,23 @@ offset_left = -57.0
 offset_top = 80.0
 offset_right = 71.0
 offset_bottom = 115.0
+theme = ExtResource("2_rmjfq")
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("6_d4w6o")
+theme_override_font_sizes/font_size = 21
 text = "Lillian"
 
 [node name="EleanorBtn" type="Button" parent="InterrogateBtn"]
 visible = false
 layout_mode = 0
 offset_left = -57.0
-offset_top = 119.0
+offset_top = 128.0
 offset_right = 71.0
-offset_bottom = 152.0
+offset_bottom = 161.0
+theme = ExtResource("2_rmjfq")
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("6_d4w6o")
+theme_override_font_sizes/font_size = 21
 text = "Eleanor"
 
 [node name="StarLevel" type="Control" parent="."]
@@ -274,6 +282,9 @@ texture = ExtResource("13_qogh7")
 layout_mode = 2
 texture = ExtResource("13_qogh7")
 
+[connection signal="option_selected" from="DialogueBox" to="." method="_on_dialogue_box_option_selected"]
 [connection signal="pressed" from="InterrogateBtn" to="." method="_on_interrogate_btn_pressed"]
+[connection signal="mouse_entered" from="InterrogateBtn/LillianBtn" to="." method="_on_lillian_btn_mouse_entered"]
 [connection signal="pressed" from="InterrogateBtn/LillianBtn" to="." method="_on_lillian_btn_pressed"]
+[connection signal="mouse_entered" from="InterrogateBtn/EleanorBtn" to="." method="_on_eleanor_btn_mouse_entered"]
 [connection signal="pressed" from="InterrogateBtn/EleanorBtn" to="." method="_on_eleanor_btn_pressed"]

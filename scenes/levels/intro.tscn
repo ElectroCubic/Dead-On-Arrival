@@ -1,15 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://d3n5k4dwxdws3"]
+[gd_scene load_steps=8 format=3 uid="uid://d3n5k4dwxdws3"]
 
 [ext_resource type="PackedScene" uid="uid://c15yqkryj3lhd" path="res://scenes/levels/level.tscn" id="1_3kqdl"]
 [ext_resource type="Script" uid="uid://cineyvdl6foh5" path="res://scenes/levels/intro.gd" id="2_gs2wg"]
-[ext_resource type="Texture2D" uid="uid://151u4x4h2ykx" path="res://resources/bg1.tres" id="3_ty81x"]
+[ext_resource type="Texture2D" uid="uid://b8pa8tvbrqls4" path="res://graphics/backgrounds/3090607_2074.jpg" id="3_ty81x"]
 [ext_resource type="Resource" uid="uid://dtivp056m5sbj" path="res://resources/BlackwoodIntro.tres" id="4_7i1al"]
+[ext_resource type="Theme" uid="uid://dc6c1peo4pfyr" path="res://addons/dialogue_nodes/themes/bubbly.theme" id="6_7i1al"]
+[ext_resource type="FontFile" uid="uid://yhhpudnvmaps" path="res://resources/fonts/SpecialElite-Regular.ttf" id="6_p8wlm"]
 [ext_resource type="PackedScene" uid="uid://bh7rkcb0te8ot" path="res://scenes/arrow.tscn" id="7_7i1al"]
 
 [node name="Intro" instance=ExtResource("1_3kqdl")]
 script = ExtResource("2_gs2wg")
 
 [node name="Background" parent="." index="0"]
+position = Vector2(577.9229, 192.5)
+scale = Vector2(0.211992, 0.23025)
 texture = ExtResource("3_ty81x")
 metadata/_edit_lock_ = true
 
@@ -25,3 +29,22 @@ target_scene = "res://scenes/levels/dinner_hall.tscn"
 [node name="RightArrow" parent="." index="6" instance=ExtResource("7_7i1al")]
 position = Vector2(1102, 405)
 target_scene = "res://scenes/levels/study.tscn"
+
+[node name="TextureRect" parent="InterrogateBtn" index="0"]
+offset_left = 5.0
+offset_top = 3.0
+offset_right = -6.0
+
+[node name="LillianBtn" parent="InterrogateBtn" index="1"]
+theme = ExtResource("6_7i1al")
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("6_p8wlm")
+theme_override_font_sizes/font_size = 21
+
+[node name="EleanorBtn" parent="InterrogateBtn" index="2"]
+offset_top = 128.0
+offset_bottom = 161.0
+theme = ExtResource("6_7i1al")
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("6_p8wlm")
+theme_override_font_sizes/font_size = 21

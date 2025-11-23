@@ -33,6 +33,7 @@ scale = Vector2(0.7343811, 0.7578812)
 texture = ExtResource("3_d0r5w")
 
 [node name="DialogueBox" parent="." index="1"]
+visible = false
 data = ExtResource("4_abu8i")
 start_id = "STUDY"
 
@@ -78,7 +79,7 @@ position = Vector2(1009, 448)
 scale = Vector2(1, 0.19999997)
 item_name = "Handkerchief"
 item_icon = ExtResource("9_2py5k")
-item_info = "A rather clean hankie founc near the window table, it has a name embroidered inside as \"Lily\""
+item_info = "A rather clean hankie found near the window table, it has a name embroidered inside as \"Lily\""
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Items/Hankie" index="1"]
 position = Vector2(46.49994, 37.50049)

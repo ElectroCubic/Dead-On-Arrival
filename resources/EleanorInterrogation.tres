@@ -63,11 +63,11 @@ nodes = {
 "text": "We'll talk later..."
 }
 },
-"size": Vector2(399.99927, 343.00024),
+"size": Vector2(399.99927, 343.00037),
 "speaker": 2
 },
 &"1_10": {
-"dialogue": "My my, you're onto me, well go ahead, what do you think I was doing?",
+"dialogue": "My my, you're onto me, well go ahead, what do you think I was doing? (Click on an Inventory Item to Present Evidence!) ",
 "offset": Vector2(1620, 540),
 "options": {
 0: {
@@ -76,7 +76,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.0006, 279.99976),
+"size": Vector2(300, 299.99988),
 "speaker": 2
 },
 &"1_11": {
@@ -89,7 +89,7 @@ nodes = {
 "text": "Ok..."
 }
 },
-"size": Vector2(320, 280),
+"size": Vector2(320.00037, 280.00037),
 "speaker": 2
 },
 &"1_12": {
@@ -102,7 +102,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(339.9995, 280.00024),
+"size": Vector2(339.9995, 280.00006),
 "speaker": 2
 },
 &"1_13": {
@@ -115,7 +115,7 @@ nodes = {
 "text": "Uh oh..."
 }
 },
-"size": Vector2(300, 273),
+"size": Vector2(300, 272.9994),
 "speaker": 2
 },
 &"1_14": {
@@ -128,7 +128,7 @@ nodes = {
 "text": "Interesting..."
 }
 },
-"size": Vector2(300.00024, 279.9995),
+"size": Vector2(300, 279.99927),
 "speaker": 2
 },
 &"1_15": {
@@ -141,7 +141,7 @@ nodes = {
 "text": "I found them under the table"
 }
 },
-"size": Vector2(300, 279.99976),
+"size": Vector2(300, 279.99988),
 "speaker": 2
 },
 &"1_16": {
@@ -154,7 +154,7 @@ nodes = {
 "text": "How did you kill him?"
 }
 },
-"size": Vector2(300, 319.99976),
+"size": Vector2(300, 319.9995),
 "speaker": 2
 },
 &"1_17": {
@@ -167,7 +167,7 @@ nodes = {
 "text": "What did you do?"
 }
 },
-"size": Vector2(319.99915, 319.99902),
+"size": Vector2(319.99927, 319.99878),
 "speaker": 2
 },
 &"1_18": {
@@ -180,7 +180,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.00122, 240.00043),
+"size": Vector2(300.00098, 240.00049),
 "speaker": 2
 },
 &"1_19": {
@@ -193,7 +193,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.00024, 240.00043),
+"size": Vector2(300.00037, 240.00012),
 "speaker": 2
 },
 &"1_2": {
@@ -206,7 +206,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.00085, 260.0005),
+"size": Vector2(300.00098, 260.00073),
 "speaker": 2
 },
 &"1_20": {
@@ -237,7 +237,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.00073, 279.99976),
+"size": Vector2(300.00073, 280),
 "speaker": 2
 },
 &"1_22": {
@@ -250,7 +250,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(319.99902, 320),
+"size": Vector2(319.99902, 319.9995),
 "speaker": 2
 },
 &"1_23": {
@@ -263,7 +263,7 @@ nodes = {
 "text": "Oh? You know this?"
 }
 },
-"size": Vector2(300, 320.00055),
+"size": Vector2(300, 320.0005),
 "speaker": 2
 },
 &"1_24": {
@@ -276,7 +276,7 @@ nodes = {
 "text": "Why?"
 }
 },
-"size": Vector2(300.0005, 299.99945),
+"size": Vector2(300.00037, 300),
 "speaker": 2
 },
 &"1_3": {
@@ -294,7 +294,7 @@ nodes = {
 "text": "No you're not! I think you did it."
 }
 },
-"size": Vector2(399.99963, 320),
+"size": Vector2(399.99976, 319.9998),
 "speaker": 2
 },
 &"1_4": {
@@ -307,7 +307,7 @@ nodes = {
 "text": "Hmm... My bad."
 }
 },
-"size": Vector2(319.99915, 320),
+"size": Vector2(319.99915, 320.00012),
 "speaker": 2
 },
 &"1_5": {
@@ -325,11 +325,11 @@ nodes = {
 "text": "Ok... I can believe that."
 }
 },
-"size": Vector2(379.99976, 320),
+"size": Vector2(379.99976, 319.99997),
 "speaker": 2
 },
 &"1_6": {
-"dialogue": "Oh, now we're talking, what exactly proves that I went there?",
+"dialogue": "Oh, now we're talking, what exactly proves that I went there? (Click on an Inventory Item to Present Evidence!) ",
 "offset": Vector2(1840, -540),
 "options": {
 0: {
@@ -338,7 +338,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.00024, 260),
+"size": Vector2(300, 340.00003),
 "speaker": 2
 },
 &"1_7": {
@@ -356,7 +356,7 @@ nodes = {
 "text": "What were you doing in the Garden exactly?"
 }
 },
-"size": Vector2(379.9989, 308.00024),
+"size": Vector2(379.99902, 307.99988),
 "speaker": 2
 },
 &"1_8": {
@@ -374,7 +374,7 @@ nodes = {
 "text": "Nope I won't fall for this! Are you trying to trick me?"
 }
 },
-"size": Vector2(420.00098, 308),
+"size": Vector2(420.00098, 307.99896),
 "speaker": 2
 },
 &"1_9": {
@@ -392,7 +392,7 @@ nodes = {
 "text": "I have evidence you were doing something else as well"
 }
 },
-"size": Vector2(459.99927, 308),
+"size": Vector2(459.99927, 307.99976),
 "speaker": 2
 },
 &"3_1": {

@@ -8,10 +8,12 @@ func _on_music_slider_value_changed(value) -> void:
 	AudioManager.current_music_vol = value
 	AudioServer.set_bus_volume_db(AudioManager.music_bus_id,linear_to_db(value))
 	AudioServer.set_bus_mute(AudioManager.music_bus_id, value < 0.05)
+	AudioManager.rollover_sfx.play()
 
 func _on_sfx_slider_value_changed(value) -> void:
 	AudioServer.set_bus_volume_db(AudioManager.sfx_bus_id,linear_to_db(value))
 	AudioServer.set_bus_mute(AudioManager.sfx_bus_id, value < 0.05)
+	AudioManager.rollover_sfx.play()
 
 func _on_back_pressed() -> void:
 	AudioManager.click_sfx.play()
